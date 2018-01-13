@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
 
 export default class Register extends Component {
+    verifyUsername(){
+        let username = this.refs.username.value;
+        console.log(username);
+        this.props.isExit(username);
+    }
     render() {
         return <div>
             <div className="row content">
@@ -8,7 +13,8 @@ export default class Register extends Component {
                     <center>
                         <h1 className="headline">注册</h1>
                     </center>
-                    <input type="text" ref="username" className="form-control" id="img1" placeholder="用户名"/>
+                    <input type="text" ref="username" className="form-control" id="img1" placeholder="用户名"
+                    onBlur={this.verifyUsername.bind(this)}/>
                     <span id="usernameTip"> </span><br/>
                     <input type="password" id="img2" placeholder="请将密码设置为6-16位字母数字" className="form-control"
                            ref="password" />

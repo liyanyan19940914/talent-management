@@ -1,4 +1,11 @@
 import {connect} from "react-redux";
 import Register from "../components/register";
 
-export default connect()(Register);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        isExit:(username)=>{
+            dispatch({type:'ISEXIT',username})
+        }
+    }
+}
+export default connect(()=>{return {}},mapDispatchToProps)(Register);
