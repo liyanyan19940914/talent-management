@@ -34,6 +34,21 @@ class Register extends Component {
     focusConfirm(){
         $("#repeatTip").text("");
     }
+    register(){
+        let psTip = $("#passwordTip").text();
+        let rpTip = $("#repeatTip").text();
+        if(psTip != ""){
+            $("#password").focus();
+        }
+        else if(rpTip != ""){
+            $("#confirmPassword").focus();
+        }else{
+            let username = this.refs.userName.value;
+            let password = this.refs.password.value;
+            console.log(username,password);
+            this.props.onRegister({username,password})
+        }
+    }
     render() {
         return <div>
             <div className="backgroundImg"></div>
@@ -41,22 +56,22 @@ class Register extends Component {
                 <div className="left-area f1">
                     <h3 className="headline">注册</h3>
                     <div className="input-item clearfix">
-                        <input type="text" className="inputStyle" ref="userName" placeholder="请输入用户名" name="userName" autoFocus="autoFocus"
+                        <input type="text" className="inputStyle" ref="userName" placeholder="请输入用户名" id="userName" autoFocus="autoFocus"
                         onBlur={this.verifyUsername.bind(this)} onFocus={this.focusName.bind(this)}/>
                         <span className="input-tips" id="usernameTip"></span>
                     </div>
                     <div className="input-item clearfix">
-                        <input type="password" className="inputStyle" ref="password" placeholder="请输入密码" name="password"
+                        <input type="password" className="inputStyle" ref="password" placeholder="请输入密码" id="password"
                         onBlur={this.verifyPassword.bind(this)}onFocus={this.focusPassword.bind(this)} />
                         <span className="input-tips" id="passwordTip"></span>
                     </div>
                     <div className="input-item clearfix">
-                        <input type="password" className="inputStyle" ref="confirmPassword" placeholder="请再次输入密码" name="confirm"
+                        <input type="password" className="inputStyle" ref="confirmPassword" placeholder="请再次输入密码" id="confirmPassword"
                         onBlur={this.repeatPassword.bind(this)} onFocus={this.focusConfirm.bind(this)}/>
                         <span className="input-tips" id="repeatTip"></span>
                     </div>
                     <div>
-                        <button type="submit" className="buttonType" >注册</button>
+                        <button type="submit" className="buttonType" onClick={this.register.bind(this)} >注册</button>
                     </div>
                 </div>
                 <div className="divider f1"></div>
