@@ -1,0 +1,106 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+.backgroundImg{
+    position: relative;
+    width:100%;
+    height: 300px;
+    background-color: #00b38a;
+}
+
+.content-box{
+    width:552px;
+    margin:-205px auto 60px;
+    padding: 62px 70px 68px 78px;
+    background-color: #fff;
+    display: table;
+    border-radius: 2px;
+    border:1px solid #dce1e6;
+}
+
+.content-box{
+    position: relative;
+    z-index: 1;
+}
+
+.left-area{
+    width:290px;
+}
+
+.f1{
+    float: left;
+}
+.warning{
+    color:red;
+    padding:10px;
+    font-size: 18px;
+    width: 70%;
+    margin-bottom: 10px;
+}
+
+.headline{
+    font-weight: bold ;
+    font-size: 22px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.inputStyle{
+    margin-bottom: 15px;
+    width:100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+
+.buttonType{
+    width: 100%;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 4px 2px;
+    border-radius:4px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    color: black;
+    border: 2px solid  #00b38a;
+    background-color:  #00b38a;
+}
+
+.forgot-pwd{
+    position: relative;
+    float: right;
+    font-size: 14px;
+    text-align: right;
+    color:  #00b38a;
+    margin-bottom: 15px;
+}
+
+.divider{
+    position: relative;
+    border-left:1px dashed #ededed;
+    height:320px;
+    color:#ededed;
+    margin: 0 52px;
+}
+
+.right-area{
+    padding-top: 120px;
+
+}
+
+.login-now{
+    height: 22px;
+    font-size:16px;
+    color:#00b38a;
+    padding-right: 23px;
+    background: url(//img.lagou.com/passport/static/pc/modules/common/img/icon-arrow-right_ea91505.png) right center no-repeat;
+}
