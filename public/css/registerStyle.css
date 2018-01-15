@@ -11,9 +11,9 @@
 }
 
 .content-box{
-    width:552px;
+    width:43%;
     margin:-195px auto 60px;
-    padding: 62px 70px 40px 78px;
+    padding: 62px 5.6% 5.6% 78px;
     background-color: #fff;
     display: table;
     border-radius: 2px;
@@ -26,29 +26,48 @@
 }
 
 .left-area{
-    width:290px;
+    width:52.5%;
 }
 
 .f1{
     float: left;
 }
-.warning{
-    color:red;
-    padding:10px;
-    font-size: 18px;
-    width: 70%;
-    margin-bottom: 10px;
-}
 
 .headline{
     font-weight: bold ;
     font-size: 22px;
-    margin-bottom: 15px;
+    margin-bottom: 5.1%;
     text-align: center;
 }
 
+.input-item{
+    position: relative;
+    z-index: 1;
+}
+
+.input-item:first-child{
+    z-index: 2;
+}
+
+.clearfix{
+    zoom:1;
+}
+
+.clearfix:before{
+    content: "";
+    display: table;
+}
+
+.clearfix:after{
+    clear: both;
+}
+
+.clearfix:after{
+    content: "";
+    display: table;
+}
+
 .inputStyle{
-    margin-bottom: 15px;
     width:100%;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -81,7 +100,7 @@
     font-size: 14px;
     text-align: right;
     color:  #00b38a;
-    margin-bottom: 15px;
+    margin-bottom: 5.1%;
 }
 
 .divider{
@@ -89,11 +108,11 @@
     border-left:1px dashed #ededed;
     height:320px;
     color:#ededed;
-    margin: 0 52px;
+    margin: 0 10%;
 }
 
 .right-area{
-    padding-top: 120px;
+    padding-top: 19%;
 
 }
 
@@ -104,4 +123,15 @@
     color:#00b38a;
     padding-right: 23px;
     background: url(//img.lagou.com/passport/static/pc/modules/common/img/icon-arrow-right_ea91505.png) right center no-repeat;
+}
+
+.input-tips{
+    position: relative;
+    z-index: 2;
+    display: block;
+    line-height: 18px;
+    font-size: 12px;
+    color:#fd5f39;
+    padding-left: 20px;
+    margin-bottom: 5.1%;
 }

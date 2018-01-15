@@ -2,21 +2,58 @@ import React, {Component} from "react";
 import {Link, browserHistory} from 'react-router';
 
 class Register extends Component {
+    verifyUsername(){
+        let username = this.refs.userName.value;
+        let regexp = /^\w{4,6}$/;
+        if (!regexp.test(username)) {
+            $("#usernameTip").text("请将用户名设置为4-6位字母数字");
+        }
+    }
+    focusName(){
+        $("#usernameTip").text("");
 
+    }
+    verifyPassword(){
+        let password = this.refs.password.value;
+        let regexp = /^\w{6,16}$/;
+        if (!regexp.test(password)) {
+            $("#passwordTip").text("请将密码设置为6-16位字母数字");
+        }
+    }
+    focusPassword(){
+        $("#passwordTip").text("");
+        $("#repeatTip").text("");
+    }
+    repeatPassword() {
+        let password = this.refs.password.value;
+        let confirmPassword = this.refs.confirmPassword.value;
+        if (password !== confirmPassword) {
+            $("#repeatTip").text("与初始密码不一致");
+        }
+    }
+    focusConfirm(){
+        $("#repeatTip").text("");
+    }
     render() {
         return <div>
             <div className="backgroundImg"></div>
             <section className="content-box">
                 <div className="left-area f1">
                     <h3 className="headline">注册</h3>
-                    <div>
-                        <input type="text" className="inputStyle" id="userName" placeholder="请输入用户名" name="userName" autoFocus="autoFocus"/>
+                    <div className="input-item clearfix">
+                        <input type="text" className="inputStyle" ref="userName" placeholder="请输入用户名" name="userName" autoFocus="autoFocus"
+                        onBlur={this.verifyUsername.bind(this)} onFocus={this.focusName.bind(this)}/>
+                        <span className="input-tips" id="usernameTip"></span>
                     </div>
-                    <div>
-                        <input type="password" className="inputStyle" id="password" placeholder="请输入密码" name="password"/>
+                    <div className="input-item clearfix">
+                        <input type="password" className="inputStyle" ref="password" placeholder="请输入密码" name="password"
+                        onBlur={this.verifyPassword.bind(this)}onFocus={this.focusPassword.bind(this)} />
+                        <span className="input-tips" id="passwordTip"></span>
                     </div>
-                    <div>
-                        <input type="password" className="inputStyle" id="confirm" placeholder="请再次输入密码" name="confirm"/>
+                    <div className="input-item clearfix">
+                        <input type="password" className="inputStyle" ref="confirmPassword" placeholder="请再次输入密码" name="confirm"
+                        onBlur={this.repeatPassword.bind(this)} onFocus={this.focusConfirm.bind(this)}/>
+                        <span className="input-tips" id="repeatTip"></span>
                     </div>
                     <div>
                         <button type="submit" className="buttonType" >注册</button>

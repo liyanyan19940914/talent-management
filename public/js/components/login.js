@@ -11,9 +11,11 @@ class Login extends Component {
                     <h3 className="headline">登录</h3>
                     <div>
                         <input type="text" className="inputStyle" id="userName" placeholder="请输入用户名" name="userName" autoFocus="autoFocus"/>
+                        <span className="input-tips"></span>
                     </div>
                     <div>
                         <input type="password" className="inputStyle" id="password" placeholder="请输入密码" name="password"/>
+                        <span className="input-tips"></span>
                     </div>
                     <span className="forgot-pwd">忘记密码？</span>
                     <div>
