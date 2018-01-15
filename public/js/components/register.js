@@ -25,7 +25,7 @@ class Register extends Component {
                 <div className="divider f1"></div>
                 <div className="right-area f1">
                     <h5>已有账号：</h5>
-                    <span className="login-now">立即登录</span>
+                    <Link to="/login" className="login-now">立即登录</Link>
                 </div>
             </section>
 

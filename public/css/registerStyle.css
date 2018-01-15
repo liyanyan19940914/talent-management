@@ -100,6 +100,7 @@
 .login-now{
     height: 22px;
     font-size:16px;
+    text-decoration: none;
     color:#00b38a;
     padding-right: 23px;
     background: url(//img.lagou.com/passport/static/pc/modules/common/img/icon-arrow-right_ea91505.png) right center no-repeat;

@@ -23,7 +23,7 @@ class Login extends Component {
                 <div className="divider f1"></div>
                 <div className="right-area f1">
                     <h5>没有账号：</h5>
-                    <span className="login-now">立即注册</span>
+                    <Link to="/register" className="login-now">立即注册</Link>
                 </div>
             </section>
 
