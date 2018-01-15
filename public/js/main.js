@@ -7,6 +7,7 @@ import reducer from "./reducer/index";
 
 import App from './containers/app';
 import Register from './containers/register';
+import Login from './containers/login'
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
@@ -17,6 +18,7 @@ render(
         <Router history={browserHistory}>
             <Route path="/" component={App}/>
             <Route path='/register' component={Register}/>
+            <Route path='/login' component={Login}/>
         </Router>
     </Provider>, document.getElementById('app')
 );
