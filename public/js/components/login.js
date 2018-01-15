@@ -20,6 +20,7 @@ class Login extends Component {
     focusPassword(){
         $("#passwordTip").text("");
     }
+
     render() {
         return <div>
             <div className="backgroundImg"></div>
