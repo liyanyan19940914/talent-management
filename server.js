@@ -7,6 +7,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('./public'));
 
+const addUser = require('./server/routers/register');
+
+app.use('/',addUser);
+
 app.get('*', (req, res) => {
     "use strict";
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
