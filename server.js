@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('./public'));
 
-const addUser = require('./server/routers/register');
+const addUser = require('./server/routers/insertUser');
 
 app.use('/',addUser);
 
