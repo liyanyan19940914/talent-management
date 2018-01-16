@@ -8,7 +8,8 @@ export default store => next => action =>{
             request.post('/register')
                 .send({username:action.data.username,password:action.data.password})
                 .end((err,res)=>{
-                    next({type:'LOING-SHOW'})
+                    console.log(res.body.status);
+                    next({type:'LOGIN-SHOW',status:res.body.status})
             });
             break;
     }

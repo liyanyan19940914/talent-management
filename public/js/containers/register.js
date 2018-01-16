@@ -1,6 +1,11 @@
 import {connect} from "react-redux";
 import Register from "../components/register";
 
+const mapStateToProps = (state) => {
+    console.log(state)
+    return state;
+}
+
 const mapDispatchToProps = (dispatch) =>{
     return {
         onRegister:(data)=>{
@@ -9,4 +14,4 @@ const mapDispatchToProps = (dispatch) =>{
     }
 };
 
-export default connect(()=>{return {}},mapDispatchToProps)(Register);
+export default connect(mapStateToProps,mapDispatchToProps)(Register);

@@ -49,6 +49,12 @@ class Register extends Component {
             this.props.onRegister({username,password})
         }
     }
+    componentWillUpdate(nextProps){
+        if(nextProps.register.isRegister){
+            browserHistory.push('/login');
+        }
+    }
+
     render() {
         return <div>
             <div className="backgroundImg"></div>
