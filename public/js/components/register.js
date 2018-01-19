@@ -8,6 +8,9 @@ class Register extends Component {
         if (!regexp.test(username)) {
             $("#usernameTip").text("请将用户名设置为4-6位字母数字");
         }
+        // else{
+        //     this.props.isExit({username});
+        // }
     }
     focusName(){
         $("#usernameTip").text("");
@@ -37,6 +40,9 @@ class Register extends Component {
     register(){
         let psTip = $("#passwordTip").text();
         let rpTip = $("#repeatTip").text();
+        // if(this.props.register.isExit != "false"){
+        //     $("#usernameTip").text("用户名已被注册，请重新输入");
+        // }
         if(psTip != ""){
             $("#password").focus();
         }
@@ -52,6 +58,7 @@ class Register extends Component {
     componentWillUpdate(nextProps){
         if(nextProps.register.isRegister){
             browserHistory.push('/login');
+            this.props.resetRegister({isRegister:false})
         }
     }
 

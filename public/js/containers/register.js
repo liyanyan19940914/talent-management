@@ -10,7 +10,16 @@ const mapDispatchToProps = (dispatch) =>{
     return {
         onRegister:(data)=>{
             dispatch({type:'REGISTER',data})
-        }
+        },
+        resetRegister:(data)=>{
+            dispatch({type:'reset-register',data})
+    }
+    //     isExit:(data)=>{
+    //         dispatch({type:'ISEXIT',data})
+    //     },
+    //     resetExit:(data)=>{
+    //         dispatch({type:'RESETEXIT',data})
+    // }
     }
 };
 

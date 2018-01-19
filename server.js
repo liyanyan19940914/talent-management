@@ -8,8 +8,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('./public'));
 
 const addUser = require('./server/routers/insertUser');
+const findUser = require('./server/routers/findUser');
 
 app.use('/',addUser);
+app.use('/',findUser);
 
 app.get('*', (req, res) => {
     "use strict";
