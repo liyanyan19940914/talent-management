@@ -7,14 +7,14 @@ route.post('/login',(req,res)=>{
     findUser(userInformation,(result)=>{
         console.log(result);
         if(result.length === 0){
-            res.send('用户不存在');
+            res.send({status:'用户不存在'});
         }
         else{
-            if(result.password !== userInformation.password){
-                res.send('密码错误，请重新输入');
+            if(result[0].password !== userInformation.password){
+                res.send({status:'密码错误，请重新输入'});
             }else{
                 res.cookie('username',userInformation.username,{path:'/'});
-                res.send(true);
+                res.send({status:true});
             }
         }
 

@@ -25,6 +25,18 @@ class Login extends Component {
         let password = this.refs.password.value;
         this.props.onLogin({username,password});
     }
+    componentWillUpdate(nextProps){
+        if(nextProps.login.isLogin === "用户不存在"){
+            $("#usernameTip").text("用户不存在");
+            this.props.resetLogin({isLogin:false});
+        }else if(nextProps.login.isLogin === "密码错误，请重新输入"){
+            $("#passwordTip").text("密码错误，请重新输入");
+            this.props.resetLogin({isLogin:false});
+        }else if(nextProps.login.isLogin){
+            browserHistory.push('/register');
+            this.props.resetLogin({isLogin:false});
+        }
+    }
     render() {
         return <div>
             <div className="backgroundImg"></div>
