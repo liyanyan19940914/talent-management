@@ -9,9 +9,11 @@ app.use(express.static('./public'));
 
 const addUser = require('./server/routers/insertUser');
 const findUser = require('./server/routers/findUser');
+const searchUser = require('./server/routers/searchUser');
 
 app.use('/',addUser);
 app.use('/',findUser);
+app.use('/',searchUser);
 
 app.get('*', (req, res) => {
     "use strict";

@@ -9,9 +9,10 @@ import App from './containers/app';
 import Register from './containers/register';
 import Login from './containers/login'
 
-import registerMiddleware from './middleware/register'
+import registerMiddleware from './middleware/register';
+import loginMiddleware from './middleware/login';
 
-const createStoreWithMiddleware = applyMiddleware(registerMiddleware)(createStore);
+const createStoreWithMiddleware = applyMiddleware(registerMiddleware,loginMiddleware)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 
