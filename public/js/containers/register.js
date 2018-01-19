@@ -13,13 +13,7 @@ const mapDispatchToProps = (dispatch) =>{
         },
         resetRegister:(data)=>{
             dispatch({type:'reset-register',data})
-    }
-    //     isExit:(data)=>{
-    //         dispatch({type:'ISEXIT',data})
-    //     },
-    //     resetExit:(data)=>{
-    //         dispatch({type:'RESETEXIT',data})
-    // }
+        }
     }
 };
 
