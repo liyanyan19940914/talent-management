@@ -20,7 +20,11 @@ class Login extends Component {
     focusPassword(){
         $("#passwordTip").text("");
     }
-
+    login(){
+        let username = this.refs.userName.value;
+        let password = this.refs.password.value;
+        this.props.onLogin({username,password});
+    }
     render() {
         return <div>
             <div className="backgroundImg"></div>
@@ -39,7 +43,7 @@ class Login extends Component {
                     </div>
                     <span className="forgot-pwd">忘记密码？</span>
                     <div>
-                        <button type="submit" className="buttonType" >登录</button>
+                        <button type="submit" className="buttonType" onClick={this.login.bind(this)}>登录</button>
                     </div>
                 </div>
                 <div className="divider f1"></div>
