@@ -2,6 +2,9 @@ import React,{Component} from "react";
 import {Link, browserHistory} from 'react-router';
 
 class Nav extends Component{
+    componentWillMount(){
+        this.props.loadUsername();
+    }
     render(){
         return <div>
             <div className="lg-tbar">
