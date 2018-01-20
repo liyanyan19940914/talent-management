@@ -6,7 +6,7 @@ export default store => next => action =>{
             request.post('/login')
                 .send({username:action.data.username,password:action.data.password})
                 .end((err,res) => {
-                    next({type:'ONLOGIN',status:res.body.status})
+                    next({type:'ONLOGIN',status:res.body.status,loginUser:res.body.loginUser})
                 });
             break;
     }

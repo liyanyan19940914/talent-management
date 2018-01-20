@@ -14,7 +14,7 @@ route.post('/login',(req,res)=>{
                 res.send({status:'密码错误，请重新输入'});
             }else{
                 res.cookie('username',userInformation.username,{path:'/'});
-                res.send({status:true});
+                res.send({status:true,loginUser:result[0].username});
             }
         }
 

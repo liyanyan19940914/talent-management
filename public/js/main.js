@@ -12,9 +12,8 @@ import Nav from './containers/nav';
 
 import registerMiddleware from './middleware/register';
 import loginMiddleware from './middleware/login';
-import navMiddleware from './middleware/nav';
 
-const createStoreWithMiddleware = applyMiddleware(registerMiddleware,loginMiddleware,navMiddleware)(createStore);
+const createStoreWithMiddleware = applyMiddleware(registerMiddleware,loginMiddleware)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 

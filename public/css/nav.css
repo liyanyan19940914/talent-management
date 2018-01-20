@@ -9,7 +9,7 @@
 .lg-tbar-l{
     float:left;
 }
-.lg-tbar-r{
+#lg-tbar-r{
     float:right;
 }
 .topic{
@@ -54,7 +54,7 @@
 }
 
 .nav span{
-    padding:  15px 0;
+    padding:  1px 0;
 }
 span.colorA:focus, span.colorA:hover, span.colorA:active{
     /*text-decoration: underline!important;*/
@@ -67,4 +67,8 @@ span.action  {
     text-decoration: none!important;
     border-bottom: 4px solid #00b38a!important;
     /*color: #00b38a!important;*/
+}
+
+.hidden{
+    display: none;
 }

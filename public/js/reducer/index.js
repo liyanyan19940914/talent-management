@@ -4,5 +4,5 @@ import login from './login';
 
 export default combineReducers({
     register,
-    login
+    login,
 });

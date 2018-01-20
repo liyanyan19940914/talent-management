@@ -1,11 +1,21 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const session = require('express-session');
+const cookieParser = require("cookie-parser");
+
 const app = new express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('./public'));
+app.use(cookieParser());
+app.use(session({
+    secret: 'a',
+    resave: true,
+    saveUninitialized: true
+}));
+
 
 const addUser = require('./server/routers/insertUser');
 const findUser = require('./server/routers/findUser');
