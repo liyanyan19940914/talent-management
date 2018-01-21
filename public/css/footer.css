@@ -31,7 +31,7 @@
 .logo{
     width:99px;
     height: 86px;
-    background-image: url(//www.lgstatic.com/www/static/common/widgets/new_login_toolbar/img/login_officer_bg_8c1de01.png);
+    background-image: url('../images/login_officer_bg_8c1de01.png');
     background-repeat:no-repeat ;
     background-size: 99px 86px;
     position: absolute;
