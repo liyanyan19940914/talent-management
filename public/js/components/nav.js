@@ -28,7 +28,7 @@ class Nav extends Component{
             </div>
             <div className="lg-tnav">
                 <div className="inner">
-                    <ul className="nav">
+                    <ul className="list">
                         <li><span className="colorA" >首页</span></li>
                         <li><span className="colorA" >发布信息</span></li>
                         <li>个人中心</li>
