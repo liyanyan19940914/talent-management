@@ -3,6 +3,24 @@ import Nav from '../containers/nav';
 import Footer from '../containers/footer';
 
 class PostCoverMessage extends Component{
+    information(){
+        let name = this.refs.name.value;
+        let sex = this.refs.sex.value;
+        let tel = this.refs.tel.value;
+        let email = this.refs.email.value;
+        let job = this.refs.jobIntension.value;
+        if(name === "" || sex === "" || tel === "" || email === "" || job === ""){
+            alert("请补全信息");
+        }else{
+            this.refs.name.setAttribute('readOnly',true);
+            this.refs.sex.setAttribute('readOnly',true);
+            this.refs.tel.setAttribute('readOnly',true);
+            this.refs.email.setAttribute('readOnly',true);
+            this.refs.jobIntension.setAttribute('readOnly',true);
+            document.getElementById('information-submit').style.display = "none";
+        }
+
+    }
     render(){
         return <div>
             <Nav/>
@@ -63,7 +81,7 @@ class PostCoverMessage extends Component{
                                     <div className="form-group">
                                         <label for="inputEmail3" className="col-sm-2 control-label">性别</label>
                                         <div className="col-sm-4">
-                                            <select className="form-control" ref="sex">
+                                            <select className="form-control" ref="sex" id="sex">
                                                 <option>男</option>
                                                 <option>女</option>
                                             </select>
@@ -86,6 +104,10 @@ class PostCoverMessage extends Component{
                                         <div className="col-sm-8">
                                             <input type="" className="form-control" id="jobIntension" ref="jobIntension" placeholder=""/>
                                         </div>
+                                    </div>
+                                    <div className="form-group" id="information-submit">
+                                        <button type="button" className="btn btn-info col-sm-offset-2 col-sm-1" onClick={this.information.bind(this)}>保存</button>
+                                        <button type="button" className="btn btn-default col-sm-offset-1 col-sm-1">取消</button>
                                     </div>
                                 </form>
                             </div>
@@ -253,7 +275,7 @@ class PostCoverMessage extends Component{
                                 </form>
                             </div>
                         </div>
-                        <div className="form-group ">
+                        <div className="form-group">
                             <div className="col-sm-offset-2">
                                 <button type="button" className="btn btn-primary col-sm-3">确认</button>
                             </div>
