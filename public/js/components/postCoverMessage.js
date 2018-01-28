@@ -21,6 +21,71 @@ class PostCoverMessage extends Component{
         }
 
     }
+    educationExperience(){
+        let schoolName = this.refs.schoolName.value;
+        let date1 = this.refs.date1.value;
+        let date2 = this.refs.date2.value;
+        let major = this.refs.major.value;
+        let academic = this.refs.academic.value;
+        if(schoolName === "" || date1 === "" || date2 === "" || major === "" || academic === ""){
+            alert("请补全信息");
+        }else{
+            this.refs.schoolName.setAttribute('readOnly',true);
+            this.refs.date1.setAttribute('readOnly',true);
+            this.refs.date2.setAttribute('readOnly',true);
+            this.refs.major.setAttribute('readOnly',true);
+            this.refs.academic.setAttribute('readOnly',true);
+            document.getElementById('education-submit').style.display = "none";
+        }
+
+    }
+    projectExperience(){
+        let projectName = this.refs.projectName.value;
+        let standard = this.refs.standard.value;
+        let rol = this.refs.rol.value;
+        let describe = this.refs.describe.value;
+        let summary = this.refs.summary.value;
+        let duty = this.refs.duty.value;
+        if(projectName === "" || standard === "" || rol === "" || describe === "" || summary === "" || duty === ""){
+            alert("请补全信息");
+        }else{
+            this.refs.projectName.setAttribute('readOnly',true);
+            this.refs.standard.setAttribute('readOnly',true);
+            this.refs.rol.setAttribute('readOnly',true);
+            this.refs.describe.setAttribute('readOnly',true);
+            this.refs.summary.setAttribute('readOnly',true);
+            this.refs.duty.setAttribute('readOnly',true);
+            document.getElementById('project-submit').style.display = "none";
+        }
+    }
+    expectWork(){
+        let jobType = this.refs.jobType.value;
+        let city = this.refs.city.value;
+        let pay = this.refs.pay.value;
+        let industry = this.refs.industry.value;
+        let occupation = this.refs.occupation.value;
+        if(jobType === "" || city === "" || pay === "" || industry === "" || occupation === ""){
+            alert("请补全信息");
+        }else{
+            this.refs.jobType.setAttribute('readOnly',true);
+            this.refs.city.setAttribute('readOnly',true);
+            this.refs.pay.setAttribute('readOnly',true);
+            this.refs.industry.setAttribute('readOnly',true);
+            this.refs.occupation.setAttribute('readOnly',true);
+            document.getElementById('expectWork-submit').style.display = "none";
+        }
+    }
+    otherInformation(){
+        let hobby = this.refs.hobby.value;
+        let evaluate = this.refs.evaluate.value;
+        if(hobby === "" || evaluate === ""  ){
+            alert("请补全信息");
+        }else{
+            this.refs.hobby.setAttribute('readOnly',true);
+            this.refs.evaluate.setAttribute('readOnly',true);
+            document.getElementById('otherInformation-submit').style.display = "none";
+        }
+    }
     render(){
         return <div>
             <Nav/>
@@ -154,6 +219,10 @@ class PostCoverMessage extends Component{
                                             </select>
                                         </div>
                                     </div>
+                                    <div className="form-group" id="education-submit">
+                                        <button type="button" className="btn btn-info col-sm-offset-2 col-sm-1" onClick={this.educationExperience.bind(this)}>保存</button>
+                                        <button type="button" className="btn btn-default col-sm-offset-1 col-sm-1">取消</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -196,6 +265,10 @@ class PostCoverMessage extends Component{
                                         <div className="col-sm-8">
                                             <textarea className="form-control" rows="3" ref="duty"></textarea>
                                         </div>
+                                    </div>
+                                    <div className="form-group" id="project-submit">
+                                        <button type="button" className="btn btn-info col-sm-offset-2 col-sm-1" onClick={this.projectExperience.bind(this)}>保存</button>
+                                        <button type="button" className="btn btn-default col-sm-offset-1 col-sm-1">取消</button>
                                     </div>
                                 </form>
                             </div>
@@ -247,6 +320,10 @@ class PostCoverMessage extends Component{
                                             <input type="" className="form-control" id="occupation" ref="occupation" placeholder=""/>
                                         </div>
                                     </div>
+                                    <div className="form-group" id="expectWork-submit">
+                                        <button type="button" className="btn btn-info col-sm-offset-2 col-sm-1" onClick={this.expectWork.bind(this)}>保存</button>
+                                        <button type="button" className="btn btn-default col-sm-offset-1 col-sm-1">取消</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -271,6 +348,10 @@ class PostCoverMessage extends Component{
                                         <div className="col-sm-8">
                                             <input type="file" id="resume" ref="resume"/>
                                         </div>
+                                    </div>
+                                    <div className="form-group" id="other-submit">
+                                        <button type="button" className="btn btn-info col-sm-offset-2 col-sm-1" onClick={this.otherInformation.bind(this)}>保存</button>
+                                        <button type="button" className="btn btn-default col-sm-offset-1 col-sm-1">取消</button>
                                     </div>
                                 </form>
                             </div>
