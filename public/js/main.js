@@ -10,6 +10,7 @@ import Register from './containers/register';
 import Login from './containers/login';
 import Nav from './containers/nav';
 import Footer from './containers/footer';
+import PostCoverMessage from './containers/postCoverMessage';
 
 import registerMiddleware from './middleware/register';
 import loginMiddleware from './middleware/login';
@@ -26,6 +27,7 @@ render(
             <Route path='/login' component={Login}/>
             <Route path='/nav' component={Nav}/>
             <Route path="/footer" component={Footer}/>
+            <Route path="/postCoverMessage" component={PostCoverMessage}/>
         </Router>
     </Provider>, document.getElementById('app')
 );

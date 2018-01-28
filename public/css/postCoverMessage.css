@@ -1,0 +1,99 @@
+.post-box{
+    background: url(//assets.dajieimg.com/up/profile2013/images/bg.png) 0 0 repeat #dedede;
+}
+.content{
+    width:74%;
+    margin-right: auto;
+    margin-left: auto;
+    /*margin-top: 30px;*/
+}
+
+.post-right{
+    width:31.25%;
+    float: right;
+    overflow: hidden;
+    zoom: 1;
+}
+
+.post-rightInner{
+    padding:15px 20px 0 20px;
+    background: #ffffff;
+    border:1px solid #ddd;
+}
+
+.actionBarR{
+    padding: 15px 0 0;
+    margin-top: 30px;
+}
+
+.post-rightInner .content{
+    padding: 0 0 25px 0;
+    border:1px solid #ffffff;
+}
+
+.hd{
+    font-size: 20px;
+    padding: 0 20px 10px;
+    border-bottom: 1px solid #dce0e6;
+}
+
+.actionBarList{
+    padding: 0 10px;
+    height: auto;
+}
+
+.post-navList{
+    margin-top: 8px;
+    width: auto;
+    list-style: none;
+}
+
+ul li a{
+    margin-left: 9px;
+    display: inline-block;
+    height: 100%;
+    color:#333333;
+    text-decoration: none;
+}
+
+ul li a i{
+    display: inline-block;
+    width:18px;
+    height:18px;
+    position: relative;
+    margin: 0 9px 0 0;
+}
+
+ul li a span{
+    display: inline-block;
+    height: 43px;
+    line-height: 43px;
+    border-bottom: 1px solid #ffffff;
+    position: relative;
+}
+
+ul li a:hover{
+    color: #00b38a;
+}
+
+.post-left{
+    margin:0 310px 0 0;
+    padding-right: 3px;
+    overflow: hidden;
+    zoom:1;
+    width:647px;
+}
+
+.place{
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+}
+
+.post-location{
+    margin-top: 30px;
+}
+
+.post-submit{
+    margin-bottom: 30px;
+}

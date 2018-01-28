@@ -9,6 +9,9 @@ class Nav extends Component{
     register(){
         browserHistory.push('/register')
     }
+    postMessage(){
+        browserHistory.push('/postCoverMessage')
+    }
     render(){
         console.log(this.props.login.loginUser);
         return <div>
@@ -30,7 +33,7 @@ class Nav extends Component{
                 <div className="inner">
                     <ul className="list">
                         <li><span className="colorA" >首页</span></li>
-                        <li><span className="colorA" >发布信息</span></li>
+                        <li><span className="colorA" onClick={this.postMessage.bind(this)}>发布信息</span></li>
                         <li>个人中心</li>
                     </ul>
                 </div>
