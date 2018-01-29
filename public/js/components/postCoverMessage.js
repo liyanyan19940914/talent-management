@@ -21,6 +21,13 @@ class PostCoverMessage extends Component{
         }
 
     }
+    clearInformation(){
+        this.refs.name.value = "";
+        this.refs.sex.value = "男";
+        this.refs.tel.value = "";
+        this.refs.email.value = "";
+        this.refs.jobIntension.value = ""
+    }
     educationExperience(){
         let schoolName = this.refs.schoolName.value;
         let date1 = this.refs.date1.value;
@@ -38,6 +45,13 @@ class PostCoverMessage extends Component{
             document.getElementById('education-submit').style.display = "none";
         }
 
+    }
+    clearEducationExperience(){
+        this.refs.schoolName.value = "";
+        this.refs.date1.value = "";
+        this.refs.date2.value = "";
+        this.refs.major.value = "";
+        this.refs.academic.value = "博士研究生";
     }
     projectExperience(){
         let projectName = this.refs.projectName.value;
@@ -58,6 +72,14 @@ class PostCoverMessage extends Component{
             document.getElementById('project-submit').style.display = "none";
         }
     }
+    clearProjectExperience(){
+        this.refs.projectName.value = "";
+        this.refs.standard.value = "";
+        this.refs.rol.value = "";
+        this.refs.describe.value = "";
+        this.refs.summary.value = "";
+        this.refs.duty.value = "";
+    }
     expectWork(){
         let jobType = this.refs.jobType.value;
         let city = this.refs.city.value;
@@ -75,9 +97,17 @@ class PostCoverMessage extends Component{
             document.getElementById('expectWork-submit').style.display = "none";
         }
     }
+    clearExpectWork(){
+        this.refs.jobType.value = "全职";
+        this.refs.city.value = "";
+        this.refs.pay.value = "2k以下";
+        this.refs.industry.value = "";
+        this.refs.occupation.value = "";
+    }
     otherInformation(){
         let hobby = this.refs.hobby.value;
         let evaluate = this.refs.evaluate.value;
+        let resume = this.refs.resume.value;
         if(hobby === "" || evaluate === ""  ){
             alert("请补全信息");
         }else{
@@ -85,6 +115,11 @@ class PostCoverMessage extends Component{
             this.refs.evaluate.setAttribute('readOnly',true);
             document.getElementById('otherInformation-submit').style.display = "none";
         }
+    }
+    clearOtherInformation(){
+        this.refs.hobby.value = "";
+        this.refs.evaluate.value = "";
+        this.refs.resume.value = "";
     }
     render(){
         return <div>
@@ -172,7 +207,7 @@ class PostCoverMessage extends Component{
                                     </div>
                                     <div className="form-group" id="information-submit">
                                         <button type="button" className="btn btn-info col-sm-offset-2 col-sm-1" onClick={this.information.bind(this)}>保存</button>
-                                        <button type="button" className="btn btn-default col-sm-offset-1 col-sm-1">取消</button>
+                                        <button type="button" className="btn btn-default col-sm-offset-1 col-sm-1" onClick={this.clearInformation.bind(this)}>取消</button>
                                     </div>
                                 </form>
                             </div>
@@ -221,7 +256,7 @@ class PostCoverMessage extends Component{
                                     </div>
                                     <div className="form-group" id="education-submit">
                                         <button type="button" className="btn btn-info col-sm-offset-2 col-sm-1" onClick={this.educationExperience.bind(this)}>保存</button>
-                                        <button type="button" className="btn btn-default col-sm-offset-1 col-sm-1">取消</button>
+                                        <button type="button" className="btn btn-default col-sm-offset-1 col-sm-1" onClick={this.clearEducationExperience.bind(this)}>取消</button>
                                     </div>
                                 </form>
                             </div>
@@ -268,7 +303,7 @@ class PostCoverMessage extends Component{
                                     </div>
                                     <div className="form-group" id="project-submit">
                                         <button type="button" className="btn btn-info col-sm-offset-2 col-sm-1" onClick={this.projectExperience.bind(this)}>保存</button>
-                                        <button type="button" className="btn btn-default col-sm-offset-1 col-sm-1">取消</button>
+                                        <button type="button" className="btn btn-default col-sm-offset-1 col-sm-1" onClick={this.clearProjectExperience.bind(this)}>取消</button>
                                     </div>
                                 </form>
                             </div>
@@ -322,7 +357,7 @@ class PostCoverMessage extends Component{
                                     </div>
                                     <div className="form-group" id="expectWork-submit">
                                         <button type="button" className="btn btn-info col-sm-offset-2 col-sm-1" onClick={this.expectWork.bind(this)}>保存</button>
-                                        <button type="button" className="btn btn-default col-sm-offset-1 col-sm-1">取消</button>
+                                        <button type="button" className="btn btn-default col-sm-offset-1 col-sm-1" onClick={this.clearExpectWork.bind(this)}>取消</button>
                                     </div>
                                 </form>
                             </div>
@@ -351,7 +386,7 @@ class PostCoverMessage extends Component{
                                     </div>
                                     <div className="form-group" id="other-submit">
                                         <button type="button" className="btn btn-info col-sm-offset-2 col-sm-1" onClick={this.otherInformation.bind(this)}>保存</button>
-                                        <button type="button" className="btn btn-default col-sm-offset-1 col-sm-1">取消</button>
+                                        <button type="button" className="btn btn-default col-sm-offset-1 col-sm-1" onClick={this.clearOtherInformation.bind(this)}>取消</button>
                                     </div>
                                 </form>
                             </div>
