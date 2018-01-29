@@ -121,6 +121,44 @@ class PostCoverMessage extends Component{
         this.refs.evaluate.value = "";
         this.refs.resume.value = "";
     }
+    postResume(){
+        let information = document.getElementById('information-submit').style.display;
+        let education = document.getElementById('education-submit').style.display;
+        let project = document.getElementById('project-submit').style.display;
+        let expectWork = document.getElementById('expectWork-submit').style.display;
+        let other = document.getElementById('other-submit').style.display;
+        if(information === 'none' && education === 'none' && project === 'none' && expectWork === 'none' && other === 'none'){
+            let name = this.refs.name.value;
+            let sex = this.refs.sex.value;
+            let tel = this.refs.tel.value;
+            let email = this.refs.email.value;
+            let job = this.refs.jobIntension.value;
+            let schoolName = this.refs.schoolName.value;
+            let date1 = this.refs.date1.value;
+            let date2 = this.refs.date2.value;
+            let major = this.refs.major.value;
+            let academic = this.refs.academic.value;
+            let projectName = this.refs.projectName.value;
+            let standard = this.refs.standard.value;
+            let rol = this.refs.rol.value;
+            let describe = this.refs.describe.value;
+            let summary = this.refs.summary.value;
+            let duty = this.refs.duty.value;
+            let jobType = this.refs.jobType.value;
+            let city = this.refs.city.value;
+            let pay = this.refs.pay.value;
+            let industry = this.refs.industry.value;
+            let occupation = this.refs.occupation.value;
+            let hobby = this.refs.hobby.value;
+            let evaluate = this.refs.evaluate.value;
+            let fileUpload = this.props.fileUpload;
+            let username = this.props.login.loginUser;
+            this.props.postCoverMessage({username,name,sex,tel,email,job,schoolName,date1,date2,major,academic,projectName,standard,
+            rol,describe,summary,duty,jobType,city,pay,industry,occupation,hobby,evaluate,fileUpload});
+        }else{
+            alert('请补全信息');
+        }
+    }
     render(){
         return <div>
             <Nav/>
@@ -206,7 +244,7 @@ class PostCoverMessage extends Component{
                                         </div>
                                     </div>
                                     <div className="form-group" id="information-submit">
-                                        <button type="button" className="btn btn-info col-sm-offset-2 col-sm-1" onClick={this.information.bind(this)}>保存</button>
+                                        <button type="button" className="btn btn-info col-sm-offset-2 col-sm-1" onClick={this.information.bind(this)} id="if">保存</button>
                                         <button type="button" className="btn btn-default col-sm-offset-1 col-sm-1" onClick={this.clearInformation.bind(this)}>取消</button>
                                     </div>
                                 </form>
@@ -388,7 +426,7 @@ class PostCoverMessage extends Component{
                         </div>
                         <div className="form-group">
                             <div className="col-sm-offset-2">
-                                <button type="button" className="btn btn-primary col-sm-3">确认</button>
+                                <button type="button" className="btn btn-primary col-sm-3" onClick={this.postResume.bind(this)}>确认</button>
                             </div>
                             <div>
                                 <button type="button" className="btn btn-default col-sm-offset-2 col-sm-3">取消</button>

@@ -1,4 +1,16 @@
 import {connect} from "react-redux";
 import PostCoverMessage from "../components/postCoverMessage";
 
-export default connect()(PostCoverMessage);
+const mapStateToProps = (state) => {
+    return state;
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        postCoverMessage:(data)=>{
+            dispatch({type:'POST-COVEER-MESSAGE',data})
+        }
+    }
+};
+
+export default connect(mapStateToProps,mapDispatchToProps)(PostCoverMessage);
