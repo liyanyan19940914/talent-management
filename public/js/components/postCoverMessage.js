@@ -108,13 +108,12 @@ class PostCoverMessage extends Component{
     otherInformation(){
         let hobby = this.refs.hobby.value;
         let evaluate = this.refs.evaluate.value;
-        let resume = this.refs.resume.value;
         if(hobby === "" || evaluate === ""  ){
             alert("请补全信息");
         }else{
             this.refs.hobby.setAttribute('readOnly',true);
             this.refs.evaluate.setAttribute('readOnly',true);
-            document.getElementById('otherInformation-submit').style.display = "none";
+            document.getElementById('other-submit').style.display = "none";
         }
     }
     clearOtherInformation(){
