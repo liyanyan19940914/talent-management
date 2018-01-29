@@ -4,13 +4,24 @@ import {Link, browserHistory} from 'react-router';
 class Nav extends Component{
 
     login(){
-        browserHistory.push('/login')
+        browserHistory.push('/login');
     }
     register(){
-        browserHistory.push('/register')
+        browserHistory.push('/register');
     }
     postMessage(){
-        browserHistory.push('/postCoverMessage')
+        let cookies = {};
+        document.cookie.split(';').forEach((Cookie)=>{
+            let parts = Cookie.split('=');
+            cookies[parts[0].trim()] = (parts[1]).trim();
+        })
+        let isLogin = this.props.login.loginUser;
+        let user = cookies.username;
+        if(user === isLogin ){
+            browserHistory.push('/postCoverMessage')
+        }else{
+            browserHistory.push('/login');
+        }
     }
     render(){
         console.log(this.props.login.loginUser);
