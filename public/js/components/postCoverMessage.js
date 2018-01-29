@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import Nav from '../containers/nav';
 import Footer from '../containers/footer';
+import FileUpload from '../containers/fileUpload';
 
 class PostCoverMessage extends Component{
     information(){
@@ -378,12 +379,7 @@ class PostCoverMessage extends Component{
                                             <textarea className="form-control" rows="3" ref="evaluate"></textarea>
                                         </div>
                                     </div>
-                                    <div className="form-group">
-                                        <label for="inputEmail3" className="col-sm-2 control-label">简历上传</label>
-                                        <div className="col-sm-8">
-                                            <input type="file" id="resume" ref="resume"/>
-                                        </div>
-                                    </div>
+                                    <FileUpload/>
                                     <div className="form-group" id="other-submit">
                                         <button type="button" className="btn btn-info col-sm-offset-2 col-sm-1" onClick={this.otherInformation.bind(this)}>保存</button>
                                         <button type="button" className="btn btn-default col-sm-offset-1 col-sm-1" onClick={this.clearOtherInformation.bind(this)}>取消</button>
