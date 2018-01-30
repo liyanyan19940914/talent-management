@@ -38,10 +38,12 @@ app.use(session({
 const addUser = require('./server/routers/insertUser');
 const findUser = require('./server/routers/findUser');
 const searchUser = require('./server/routers/searchUser');
+const addCoverMessage = require('./server/routers/insertCoverMessage');
 
 app.use('/',addUser);
 app.use('/',findUser);
 app.use('/',searchUser);
+app.use('/',addCoverMessage);
 
 app.get('*', (req, res) => {
     "use strict";

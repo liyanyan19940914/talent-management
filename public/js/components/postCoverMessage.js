@@ -153,6 +153,8 @@ class PostCoverMessage extends Component{
             let evaluate = this.refs.evaluate.value;
             let fileUpload = this.props.fileUpload;
             let username = this.props.login.loginUser;
+            console.log(username,name,sex,tel,email,job,schoolName,date1,date2,major,academic,projectName,standard,
+                rol,describe,summary,duty,jobType,city,pay,industry,occupation,hobby,evaluate,fileUpload);
             this.props.postCoverMessage({username,name,sex,tel,email,job,schoolName,date1,date2,major,academic,projectName,standard,
             rol,describe,summary,duty,jobType,city,pay,industry,occupation,hobby,evaluate,fileUpload});
         }else{

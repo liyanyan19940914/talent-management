@@ -14,8 +14,9 @@ import PostCoverMessage from './containers/postCoverMessage';
 
 import registerMiddleware from './middleware/register';
 import loginMiddleware from './middleware/login';
+import postCoverMessageMiddleware from './middleware/postCoverMessage';
 
-const createStoreWithMiddleware = applyMiddleware(registerMiddleware,loginMiddleware)(createStore);
+const createStoreWithMiddleware = applyMiddleware(registerMiddleware,loginMiddleware,postCoverMessageMiddleware)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 

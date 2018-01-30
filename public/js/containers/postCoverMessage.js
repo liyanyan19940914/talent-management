@@ -8,7 +8,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         postCoverMessage:(data)=>{
-            dispatch({type:'POST-COVEER-MESSAGE',data})
+            dispatch({type:'POST-COVER-MESSAGE',data})
         }
     }
 };
