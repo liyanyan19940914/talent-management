@@ -9,9 +9,8 @@ function insertCoverMessage(data,callback){
         + "','" + data.jobType + "','" + data.city + "','" + data.pay + "','" + data.industry + "','" + data.occupation + "','"
         + data.hobby + "','" + data.evaluate + "','" + data.resume + "')";
 
-    db.query(sql,function(err,results,fields) {
+    db.query(sql,function (err,results,fields) {
         if(err){
-            console.log(err);
             throw err;
         }else{
             callback({status:true});

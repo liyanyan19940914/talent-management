@@ -10,7 +10,8 @@ export default store => next => action =>{
                 jobType:action.data.jobType,city:action.data.city,pay:action.data.pay,industry:action.data.industry,occupation:action.data.occupation,
                 hobby:action.data.hobby,evaluate:action.data.evaluate,resume:action.data.fileUpload})
                 .end((err,res)=>{
-                    next({type:'ADD-COVER-MESSAGE',status:res.body})
+                    console.log('post cover',res.body.status);
+                    next({type:'ADD-COVER-MESSAGE',status:res.body.status})
                 });
             break;
     }

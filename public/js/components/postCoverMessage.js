@@ -161,6 +161,7 @@ class PostCoverMessage extends Component{
             alert('请补全信息');
         }
     }
+
     render(){
         return <div>
             <Nav/>
