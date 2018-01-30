@@ -8,8 +8,19 @@
 
 最后使用浏览器打开``http://localhost:3000``
 
+创建user的表：
+
+```
+create table user(
+    id INT UNSIGNED AUTO_INCREMENT primary key,
+    username varchar(40) not null,
+    password varchar(100) not null
+)default charset=utf8;
+```
+
 创建postCoverMessage的表：
 
+```
 create table postCoverMessage(
     message_id INT UNSIGNED AUTO_INCREMENT,
     userName varchar(40) not null ,
@@ -39,6 +50,6 @@ create table postCoverMessage(
     fileUpload varchar(100),
     primary key (message_id)
 )default charset=utf8;
-
+```
 
 
