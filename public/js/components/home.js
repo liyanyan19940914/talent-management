@@ -5,6 +5,8 @@ class Home extends Component{
         this.props.getAllCoverMessage();
     }
     render(){
+        let coverMessages = this.props.home;
+        console.log('home',coverMessages);
         return <div>
                 <div className="contain-header">
                     <div className="search-wrapper">
