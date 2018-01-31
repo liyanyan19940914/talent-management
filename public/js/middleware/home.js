@@ -5,7 +5,8 @@ export default store => next => action => {
         case 'GET-ALL-COVER-MESSAGE':
             request.post('/getAllCoverMessage')
                 .end((err,res) => {
-                    next({type:'ALL-COVER-MESSAGE',status:res.body});
+                    console.log(res.body.coverMessages);
+                    next({type:'ALL-COVER-MESSAGE',status:res.body.coverMessages});
                 })
             break;
     }
