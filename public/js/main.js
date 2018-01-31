@@ -11,12 +11,14 @@ import Login from './containers/login';
 import Nav from './containers/nav';
 import Footer from './containers/footer';
 import PostCoverMessage from './containers/postCoverMessage';
+import Home from './containers/home';
 
 import registerMiddleware from './middleware/register';
 import loginMiddleware from './middleware/login';
 import postCoverMessageMiddleware from './middleware/postCoverMessage';
+import homeMiddleware from './middleware/home';
 
-const createStoreWithMiddleware = applyMiddleware(registerMiddleware,loginMiddleware,postCoverMessageMiddleware)(createStore);
+const createStoreWithMiddleware = applyMiddleware(registerMiddleware,loginMiddleware,postCoverMessageMiddleware,homeMiddleware)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 
@@ -26,7 +28,7 @@ render(
             <Route path="/" component={App}/>
             <Route path='/register' component={Register}/>
             <Route path='/login' component={Login}/>
-            <Route path='/nav' component={Nav}/>
+            <Route path='/home' component={Home}/>
             <Route path="/footer" component={Footer}/>
             <Route path="/postCoverMessage" component={PostCoverMessage}/>
         </Router>
