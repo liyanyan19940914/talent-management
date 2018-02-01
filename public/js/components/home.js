@@ -1,4 +1,7 @@
 import React,{Component} from "react";
+import {Link, browserHistory} from 'react-router';
+import Nav from '../containers/nav';
+import Footer from '../containers/footer';
 
 class Home extends Component{
     componentWillMount(){
@@ -6,8 +9,8 @@ class Home extends Component{
     }
     render(){
         let coverMessages = this.props.home;
-        console.log('component',coverMessages,Array.isArray(coverMessages));
         return <div>
+            <Nav/>
                 <div className="contain-header">
                     <div className="search-wrapper">
                         <div className="search-box">
@@ -21,13 +24,19 @@ class Home extends Component{
                 <ul className="list-ul">
                     {
                          Array.isArray(coverMessages)===false ? "ssss" : coverMessages.map((ele,index)=>{
+                             const path = "readCoverMessage?name="+ele.name+"&sex="+ele.sex+"&tel="+ele.tel+"&email="+ele.email+"&job="+ele.job
+                             +"&schoolName="+ele.schoolName+"&date1="+ele.date1+"&date2="+ele.date2+"&major="+ele.major+"&academic="
+                             +ele.academic+"&projectName="+ele.projectName+"&standard="+ele.standard+"&rol="+ele.rol+"&describes="+
+                                     ele.describes+"&summary="+ele.summary+"&duty="+ele.duty+"&jobType="+ele.jobType+"&city="+ele.city+
+                                     "&pay="+ele.pay+"&industry="+ele.industry+"&occupation="+ele.occupation+"&hobby="+ele.hobby+
+                                     "&evaluate="+ele.evaluate+"&fileUpload="+ele.fileUpload;
                             return <div key={index}>
                                 <li className="list-item">
                                     <div className="pli-top">
                                         <div className="clearfix">
                                             <div className="position-name fl">
                                                 <h2 className="dib clearfix">
-                                                    <a href="" className="wordCut fl">{ele.job}</a>
+                                                    <Link to={path} className="wordCut fl">{ele.job}</Link>
                                                 </h2>
                                             </div>
                                             <span className="salary fr">{ele.pay}</span>
@@ -49,6 +58,7 @@ class Home extends Component{
                         })
                     }
                 </ul>
+            <Footer/>
         </div>
     }
 }
