@@ -4,11 +4,13 @@ import login from './login';
 import fileUpload from './fileUpload';
 import postCoverMessage from './postCoverMessage';
 import home from './home';
+import personalCenter from './personalCenter';
 
 export default combineReducers({
     register,
     login,
     fileUpload,
     postCoverMessage,
-    home
+    home,
+    personalCenter
 });

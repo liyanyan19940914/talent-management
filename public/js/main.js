@@ -17,8 +17,9 @@ import registerMiddleware from './middleware/register';
 import loginMiddleware from './middleware/login';
 import postCoverMessageMiddleware from './middleware/postCoverMessage';
 import homeMiddleware from './middleware/home';
+import personalCenterMiddleware from './middleware/personalCenter';
 
-const createStoreWithMiddleware = applyMiddleware(registerMiddleware,loginMiddleware,postCoverMessageMiddleware,homeMiddleware)(createStore);
+const createStoreWithMiddleware = applyMiddleware(registerMiddleware,loginMiddleware,postCoverMessageMiddleware,homeMiddleware,personalCenterMiddleware)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 

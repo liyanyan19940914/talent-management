@@ -38,7 +38,16 @@ class PersonalCenter extends Component{
             let confirmPassword = this.refs.confirmpsw.value;
             let username = this.props.location.query.username;
             console.log(username,oldpsw,password,confirmPassword);
-            this.props.updatePsw({username,oldpsw,password,confirmPassword});
+            this.props.updatePsw({username,oldpsw,password});
+        }
+    }
+    componentWillUpdate(nextProps){
+        if(nextProps.personalCenter.update === 1){
+            alert('修改成功！');
+            this.props.resetUpdate({update:false});
+        }else if(nextProps.personalCenter.update === 0){
+            alert('当前密码错误！');
+            this.props.resetUpdate({update:false});
         }
     }
     render(){

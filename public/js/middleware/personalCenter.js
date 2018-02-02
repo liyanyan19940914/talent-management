@@ -6,7 +6,8 @@ export default store => next => action =>{
             request.post('/updatePsw')
                 .send(action.date)
                 .end((err,res)=>{
-                    next({type:'update-psw',status:res.body.status})
+                    console.log(res.body.status);
+                    next({type:'UPDATE-PSW',status:res.body.status})
                 });
             break;
     }
