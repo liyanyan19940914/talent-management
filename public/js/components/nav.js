@@ -14,7 +14,7 @@ class Nav extends Component{
         document.cookie.split(';').forEach((Cookie)=> {
             let parts = Cookie.split('=');
             cookies[parts[0].trim()] = (parts[1]).trim();
-        })
+        });
         let isLogin = this.props.login.loginUser;
         let user = cookies.username;
         if (user === isLogin) {
@@ -25,6 +25,21 @@ class Nav extends Component{
     }
     home(){
         browserHistory.push('/home');
+    }
+    personalCenter(){
+        let cookies = {};
+        document.cookie.split(';').forEach((Cookie)=> {
+            let parts = Cookie.split('=');
+            cookies[parts[0].trim()] = (parts[1]).trim();
+        });
+        let isLogin = this.props.login.loginUser;
+        let user = cookies.username;
+        if (user === isLogin) {
+            let path = "personalCenter?username="+user;
+            browserHistory.push(path);
+        } else {
+            browserHistory.push('/login');
+        }
     }
     render(){
         console.log(this.props.login.loginUser);
@@ -46,9 +61,9 @@ class Nav extends Component{
             <div className="lg-tnav">
                 <div className="inner">
                     <ul className="list">
-                        <li><span className="colorA" >首页</span></li>
+                        <li><span className="colorA" onClick={this.home.bind(this)}>首页</span></li>
                         <li><span className="colorA" onClick={this.postMessage.bind(this)}>发布信息</span></li>
-                        <li>个人中心</li>
+                        <li><span className="colorA" onClick={this.personalCenter.bind(this)}>个人中心</span></li>
                     </ul>
                 </div>
             </div>

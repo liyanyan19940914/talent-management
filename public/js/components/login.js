@@ -33,7 +33,7 @@ class Login extends Component {
             $("#passwordTip").text("密码错误，请重新输入");
             this.props.resetLogin({isLogin:false});
         }else if(nextProps.login.isLogin){
-            browserHistory.push('/nav');
+            browserHistory.push('/home');
             this.props.resetLogin({isLogin:false});
         }
     }

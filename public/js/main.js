@@ -11,6 +11,7 @@ import Login from './containers/login';
 import PostCoverMessage from './containers/postCoverMessage';
 import Home from './containers/home';
 import ReadCoverMessage from './containers/readCoverMessage';
+import PersonalCenter from './containers/personalCenter';
 
 import registerMiddleware from './middleware/register';
 import loginMiddleware from './middleware/login';
@@ -30,6 +31,7 @@ render(
             <Route path='/home' component={Home}/>
             <Route path="/readCoverMessage" component={ReadCoverMessage}/>
             <Route path="/postCoverMessage" component={PostCoverMessage}/>
+            <Route path="personalCenter" component={PersonalCenter}/>
         </Router>
     </Provider>, document.getElementById('app')
 );
