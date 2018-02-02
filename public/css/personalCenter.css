@@ -131,3 +131,8 @@ a{
 #send:target,#modify-psw:target{
     z-index: 1;
 }
+
+.modify-psw-box{
+    padding-top: 20px;
+    margin:0 auto 40px auto;
+}
