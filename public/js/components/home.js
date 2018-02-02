@@ -23,7 +23,7 @@ class Home extends Component{
                 </div>
                 <ul className="list-ul">
                     {
-                         Array.isArray(coverMessages)===false ? "ssss" : coverMessages.map((ele,index)=>{
+                         Array.isArray(coverMessages)===false ? "" : coverMessages.map((ele,index)=>{
                              const path = "readCoverMessage?name="+ele.name+"&sex="+ele.sex+"&tel="+ele.tel+"&email="+ele.email+"&job="+ele.job
                              +"&schoolName="+ele.schoolName+"&date1="+ele.date1+"&date2="+ele.date2+"&major="+ele.major+"&academic="
                              +ele.academic+"&projectName="+ele.projectName+"&standard="+ele.standard+"&rol="+ele.rol+"&describes="+

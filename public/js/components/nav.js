@@ -9,19 +9,22 @@ class Nav extends Component{
     register(){
         browserHistory.push('/register');
     }
-    postMessage(){
+    postMessage() {
         let cookies = {};
-        document.cookie.split(';').forEach((Cookie)=>{
+        document.cookie.split(';').forEach((Cookie)=> {
             let parts = Cookie.split('=');
             cookies[parts[0].trim()] = (parts[1]).trim();
         })
         let isLogin = this.props.login.loginUser;
         let user = cookies.username;
-        if(user === isLogin ){
+        if (user === isLogin) {
             browserHistory.push('/postCoverMessage')
-        }else{
+        } else {
             browserHistory.push('/login');
         }
+    }
+    home(){
+        browserHistory.push('/home');
     }
     render(){
         console.log(this.props.login.loginUser);
