@@ -128,7 +128,7 @@ a{
     font:normal 18px/28px 'Microsoft Yahei','SimHei';
 }
 
-#send:target,#modify-psw:target{
+#send:target,#modify-psw:target,#modify-username:target{
     z-index: 1;
 }
 

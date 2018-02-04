@@ -10,6 +10,9 @@ const mapDispatchToProps = (dispatch) => {
         updatePsw:(date)=>{
             dispatch({type:'UPDATE-PASSWORD',date})
         },
+        updateUsername:(date)=>{
+          dispatch({type:"UPDATE-USERNAME",date})
+        },
         resetUpdate:(date)=>{
             dispatch({type:'RESET-UPDATE',date})
         }

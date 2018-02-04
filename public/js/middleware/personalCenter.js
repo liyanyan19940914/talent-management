@@ -10,6 +10,13 @@ export default store => next => action =>{
                     next({type:'UPDATE-PSW',status:res.body.status})
                 });
             break;
+        case "UPDATE-USERNAME":
+            request.post('/updateUsername')
+                .send(action.date)
+                .end((err,res)=>{
+                    next({type:'UPDATE-UNM',status:res.body.status})
+                })
+            break;
     }
     next(action);
 }

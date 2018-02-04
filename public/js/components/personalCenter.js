@@ -41,6 +41,28 @@ class PersonalCenter extends Component{
             this.props.updatePsw({username,oldpsw,password});
         }
     }
+
+    verifyUsername(){
+        let username = this.refs.newUsername.value;
+        let regexp = /^\w{4,6}$/;
+        if (!regexp.test(username)) {
+            $("#usernameTip").text("请将用户名设置为4-6位字母数字");
+        }
+    }
+    focusName(){
+        $("#usernameTip").text("");
+
+    }
+    modifyUsername(){
+        let unTip = $("#usernameTip").text();
+        if(unTip != ""){
+            $("#usernameTip").focus();
+        }else{
+            let oldUsername = this.refs.oldUsername.value;
+            let newUsername = this.refs.newUsername.value;
+            this.props.updateUsername({oldUsername,newUsername});
+        }
+    }
     componentWillUpdate(nextProps){
         if(nextProps.personalCenter.update === 1){
             alert('修改成功！');
@@ -63,6 +85,9 @@ class PersonalCenter extends Component{
                                         <div className="tabs">
                                             <ul>
                                                 <li className="active">
+                                                    <a href="#modify-username">修改用户名</a>
+                                                </li>
+                                                <li className="active">
                                                     <a href="#send">我的发布</a>
                                                 </li>
                                                 <li className="active">
@@ -81,6 +106,36 @@ class PersonalCenter extends Component{
                                         </div>
                                     </div>
                                     <div className="room">
+                                        <div className="uploading" id="modify-username">
+                                            <div className="clearfix">
+                                                <div className="modify-box">
+                                                    <h2 className="set-title">修改用户名</h2>
+                                                    <div className="modify-psw-box">
+                                                        <form className="form-horizontal">
+                                                            <div className="form-group">
+                                                                <label for="" className="col-sm-2 control-label">当前用户名</label>
+                                                                <div className="col-sm-6">
+                                                                    <input type="text" className="form-control" id="oldpsw" ref="oldUsername" placeholder=""/>
+                                                                </div>
+                                                            </div>
+                                                            <div className="form-group">
+                                                                <label for="" className="col-sm-2 control-label">新用户名</label>
+                                                                <div className="col-sm-6">
+                                                                    <input type="text" className="form-control" id="newpsw" ref="newUsername" placeholder=""
+                                                                           onBlur={this.verifyUsername.bind(this)} onFocus={this.focusName.bind(this)}/>
+                                                                    <span className="input-tips" id="usernamedTip"></span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="form-group">
+                                                                <div className="col-sm-offset-2 col-sm-10">
+                                                                    <button type="button" className="btn btn-success" onClick={this.modifyUsername.bind(this)}>保存</button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div className="uploading" id="send">
                                             <div className="clearfix">
                                                 <div className="modify-box">
