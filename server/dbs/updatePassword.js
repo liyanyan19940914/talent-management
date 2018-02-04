@@ -1,7 +1,8 @@
 const db = require('../connection');
+let md = require('md5');
 
 function updatePassword(info,callback){
-    let sql = "update user set password='" + info.password + "'where username='" +info.username+"' and "+"password='"+info.oldpsw+"'";
+    let sql = "update user set password='" + md(info.password) + "'where username='" +info.username+"' and "+"password='"+md(info.oldpsw)+"'";
 
     db.query(sql,(err,results,fields)=>{
         if(err){
