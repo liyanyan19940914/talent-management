@@ -70,6 +70,12 @@ class PersonalCenter extends Component{
         }else if(nextProps.personalCenter.update === 0){
             alert('当前密码错误！');
             this.props.resetUpdate({update:false});
+        }else if(nextProps.personalCenter.updateUsername === 1){
+            alert('修改成功！');
+            this.props.resetUpdateUsername({updateUsername:false})
+        }else if(nextProps.personalCenter.updateUsername === 0){
+            alert('当前用户名错误！');
+            this.props.resetUpdateUsername({updateUsername:false});
         }
     }
     render(){
