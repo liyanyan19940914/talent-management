@@ -47,7 +47,7 @@ class Home extends Component{
                                         </div>
                                         <div className="labels">
                                             <div className="pli-btml-l">
-                                                <span className="wordCut">{ele.duty}</span>
+                                                <span className="wordCut">{ele.industry}</span>
                                                 <span className="wordCut pli-locattion">{ele.occupation}</span>
                                             </div>
                                         </div>

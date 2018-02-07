@@ -42,6 +42,7 @@ const addCoverMessage = require('./server/routers/insertCoverMessage');
 const findCoverMessage = require('./server/routers/findMessage');
 const updatePassword = require('./server/routers/updatePassword');
 const updateUsername = require('./server/routers/updateUsername');
+const personalSend = require('./server/routers/findPersonalMessage');
 
 app.use('/',addUser);
 app.use('/',findUser);
@@ -50,6 +51,7 @@ app.use('/',addCoverMessage);
 app.use('/',findCoverMessage);
 app.use('/',updatePassword);
 app.use('/',updateUsername);
+app.use('/',personalSend);
 
 app.get('*', (req, res) => {
     "use strict";

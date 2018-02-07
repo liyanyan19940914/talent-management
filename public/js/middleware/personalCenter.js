@@ -13,14 +13,14 @@ export default store => next => action =>{
             request.post('/updateUsername')
                 .send(action.date)
                 .end((err,res)=>{
-                    console.log(res.body.status);
                     next({type:'UPDATE-UNM',status:res.body.status})
                 })
             break;
         case 'PERSONAL-SEND':
-            request.post('presonalSend')
+            request.post('personalSend')
                 .send(action.data)
                 .end((err,res)=>{
+                    console.log(res.body.status);
                     next({type:'PERSONAL-MESSAGE',status:res.body.status})
                 })
     }
