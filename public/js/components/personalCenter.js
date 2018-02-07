@@ -157,12 +157,12 @@ class PersonalCenter extends Component{
                                                         <ul className="list-ul">
                                                             {
                                                                 this.props.personalCenter.sendMessage.length===0 ?'':this.props.personalCenter.sendMessage.map((ele,index)=>{
-                                                                    const path = "readCoverMessage?name="+ele.name+"&sex="+ele.sex+"&tel="+ele.tel+"&email="+ele.email+"&job="+ele.job
+                                                                    const path = "editMessage?name="+ele.name+"&sex="+ele.sex+"&tel="+ele.tel+"&email="+ele.email+"&job="+ele.job
                                                                         +"&schoolName="+ele.schoolName+"&date1="+ele.date1+"&date2="+ele.date2+"&major="+ele.major+"&academic="
                                                                         +ele.academic+"&projectName="+ele.projectName+"&standard="+ele.standard+"&rol="+ele.rol+"&describes="+
                                                                         ele.describes+"&summary="+ele.summary+"&duty="+ele.duty+"&jobType="+ele.jobType+"&city="+ele.city+
                                                                         "&pay="+ele.pay+"&industry="+ele.industry+"&occupation="+ele.occupation+"&hobby="+ele.hobby+
-                                                                        "&evaluate="+ele.evaluate+"&fileUpload="+ele.fileUpload;
+                                                                        "&evaluate="+ele.evaluate+"&username="+ele.userName+"&id="+ele.message_id;
                                                                     return <div key={index}>
                                                                         <li className="personal-list-item">
                                                                             <div className="pli-top">
