@@ -3,6 +3,9 @@ import Nav from '../containers/nav';
 import Footer from '../containers/footer';
 
 class PersonalCenter extends Component{
+    componentWillMount(){
+        this.props.personalSend({username:this.props.login.loginUser})
+    }
     verifyPassword(){
         let password = this.refs.newpsw.value;
         let regexp = /^\w{6,16}$/;

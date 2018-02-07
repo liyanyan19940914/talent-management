@@ -17,6 +17,12 @@ export default store => next => action =>{
                     next({type:'UPDATE-UNM',status:res.body.status})
                 })
             break;
+        case 'PERSONAL-SEND':
+            request.post('presonalSend')
+                .send(action.data)
+                .end((err,res)=>{
+                    next({type:'PERSONAL-MESSAGE',status:res.body.status})
+                })
     }
     next(action);
 }

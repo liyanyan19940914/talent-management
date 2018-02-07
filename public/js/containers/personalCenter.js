@@ -18,6 +18,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         resetUpdateUsername:(date)=>{
             dispatch({type:'RESET-USERNAME',date})
+        },
+        personalSend:(data)=>{
+            dispatch({type:'PERSONAL-SEND',data})
         }
     }
 }
