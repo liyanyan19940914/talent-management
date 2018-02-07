@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import Nav from '../containers/nav';
 import Footer from '../containers/footer';
+import {Link, browserHistory} from 'react-router';
 
 class PersonalCenter extends Component{
     componentWillMount(){
@@ -82,7 +83,10 @@ class PersonalCenter extends Component{
         }
     }
     render(){
+        let message = this.props.personalCenter.sendMessage;
+        console.log('message',message);
         return <div>
+
             <Nav/>
             <div className="pc-content-wrap">
                 <div className="pc-content-inner">
@@ -149,6 +153,48 @@ class PersonalCenter extends Component{
                                             <div className="clearfix">
                                                 <div className="modify-box">
                                                     <h2 className="set-title">我的发布</h2>
+                                                    <div className="modify-psw-box">
+                                                        <ul className="list-ul">
+                                                            {
+                                                                this.props.personalCenter.sendMessage.length===0 ?'':this.props.personalCenter.sendMessage.map((ele,index)=>{
+                                                                    const path = "readCoverMessage?name="+ele.name+"&sex="+ele.sex+"&tel="+ele.tel+"&email="+ele.email+"&job="+ele.job
+                                                                        +"&schoolName="+ele.schoolName+"&date1="+ele.date1+"&date2="+ele.date2+"&major="+ele.major+"&academic="
+                                                                        +ele.academic+"&projectName="+ele.projectName+"&standard="+ele.standard+"&rol="+ele.rol+"&describes="+
+                                                                        ele.describes+"&summary="+ele.summary+"&duty="+ele.duty+"&jobType="+ele.jobType+"&city="+ele.city+
+                                                                        "&pay="+ele.pay+"&industry="+ele.industry+"&occupation="+ele.occupation+"&hobby="+ele.hobby+
+                                                                        "&evaluate="+ele.evaluate+"&fileUpload="+ele.fileUpload;
+                                                                    return <div key={index}>
+                                                                        <li className="personal-list-item">
+                                                                            <div className="pli-top">
+                                                                                <div className="clearfix">
+                                                                                    <div className="position-name fl">
+                                                                                        <h2 className="dib clearfix">
+                                                                                            <Link to={path} className="wordCut fl">{ele.job}</Link>
+                                                                                        </h2>
+                                                                                    </div>
+                                                                                    <span className="salary fr">{ele.pay}</span>
+                                                                                </div>
+                                                                                <div className="position-main-info wordCut">
+                                                                                    <span>{ele.jobType}</span>
+                                                                                    <span>{ele.academic}</span>
+                                                                                </div>
+                                                                                <div className="labels">
+                                                                                    <div className="pli-btml-l">
+                                                                                        <span className="wordCut">{ele.industry}</span>
+                                                                                        <span className="wordCut pli-locattion">{ele.occupation}</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div className="labels">
+                                                                                    <Link to={path} type="button" className="btn btn-success col-sm-3">编辑</Link>
+                                                                                    <button type="button" className="btn btn-success col-sm-offset-2 col-sm-3">删除</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                    </div>
+                                                                })
+                                                            }
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
