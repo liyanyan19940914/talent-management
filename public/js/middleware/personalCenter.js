@@ -28,6 +28,7 @@ export default store => next => action =>{
             request.post('/deleteMessage')
                 .send(action.date)
                 .end((err,res)=>{
+                    console.log(res.body.status);
                     next({type:'DELETE-SUCCESS',status:res.body.status})
                 })
             break;
