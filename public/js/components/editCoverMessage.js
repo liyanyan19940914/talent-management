@@ -58,6 +58,15 @@ class EditCoverMessage extends Component{
         this.props.updateMessage({id,username,name,sex,tel,email,job,schoolName,date1,date2,major,academic,projectName,standard,
             rol,describe,summary,duty,jobType,city,pay,industry,occupation,hobby,evaluate})
     }
+    componentWillUpdate(nextProps){
+        if(nextProps.editCoverMessage.isUpdate===1){
+            alert('修改成功');
+            this.props.resetUpdate({isUpdate:false});
+        }else if(nextProps.editCoverMessage.isUpdate===0){
+            alert('修改失败');
+            this.props.resetUpdate({isUpdate:false});
+        }
+    }
     render(){
         const message = this.props.location.query;
         console.log(message);

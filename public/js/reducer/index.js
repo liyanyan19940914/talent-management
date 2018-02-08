@@ -5,6 +5,7 @@ import fileUpload from './fileUpload';
 import postCoverMessage from './postCoverMessage';
 import home from './home';
 import personalCenter from './personalCenter';
+import editCoverMessage from './editCoverMessage';
 
 export default combineReducers({
     register,
@@ -12,5 +13,6 @@ export default combineReducers({
     fileUpload,
     postCoverMessage,
     home,
-    personalCenter
+    personalCenter,
+    editCoverMessage
 });
