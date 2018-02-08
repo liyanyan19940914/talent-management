@@ -23,6 +23,14 @@ export default store => next => action =>{
                     console.log(res.body.status);
                     next({type:'PERSONAL-MESSAGE',status:res.body.status})
                 })
+            break;
+        case "DELETE-MESSAGE":
+            request.post('/deleteMessage')
+                .send(action.date)
+                .end((err,res)=>{
+                    next({type:'DELETE-SUCCESS',status:res.body.status})
+                })
+            break;
     }
     next(action);
 }

@@ -21,6 +21,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         personalSend:(data)=>{
             dispatch({type:'PERSONAL-SEND',data})
+        },
+        deleteMessage:(date)=>{
+            dispatch({type:'DELETE-MESSAGE',date})
         }
     }
 }

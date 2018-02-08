@@ -67,6 +67,12 @@ class PersonalCenter extends Component{
             this.props.updateUsername({oldUsername,newUsername});
         }
     }
+    deleteSend(id){
+        let isdelete = confirm('是否删除？');
+        if(isdelete) {
+            this.props.deleteMessage({id});
+        }
+    }
     componentWillUpdate(nextProps){
         if(nextProps.personalCenter.update === 1){
             alert('修改成功！');
@@ -186,7 +192,7 @@ class PersonalCenter extends Component{
                                                                                 </div>
                                                                                 <div className="labels">
                                                                                     <Link to={path} type="button" className="btn btn-success col-sm-3">编辑</Link>
-                                                                                    <button type="button" className="btn btn-success col-sm-offset-2 col-sm-3">删除</button>
+                                                                                    <button type="button" className="btn btn-success col-sm-offset-2 col-sm-3" onClick={this.deleteSend.bind(this,ele.message_id)}>删除</button>
                                                                                 </div>
                                                                             </div>
                                                                         </li>
