@@ -25,7 +25,7 @@ class EditCoverMessage extends Component{
         this.refs.city.value = message.city;
         this.refs.pay.value = message.pay;
         this.refs.industry.value = message.industry;
-        this.refs.occupation.value = message.occuptaion;
+        this.refs.occupation.value = message.occupation;
         this.refs.hobby.value = message.hobby;
         this.refs.evaluate.value = message.evaluate;
     }

@@ -13,6 +13,7 @@ function insertCoverMessage(data,callback){
         if(err){
             throw err;
         }else{
+
             callback({status:true});
         }
     })
