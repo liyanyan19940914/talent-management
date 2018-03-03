@@ -87,6 +87,12 @@ class PersonalCenter extends Component{
             alert('当前用户名错误！');
             this.props.resetUpdateUsername({updateUsername:false});
         }
+        else if(nextProps.personalCenter.deleteMessage === 1){
+            this.props.personalSend({username:this.props.login.loginUser});
+        }else if(nextProps.personalCenter.deleteMessage === 0){
+            alert('删除失败！');
+        }
+
     }
     render(){
         let message = this.props.personalCenter.sendMessage;
@@ -107,10 +113,22 @@ class PersonalCenter extends Component{
                                                     <a href="#modify-username">修改用户名</a>
                                                 </li>
                                                 <li className="active">
+                                                    <a href="#modify-psw">修改密码</a>
+                                                </li>
+                                                <li className="active">
                                                     <a href="#send">我的发布</a>
                                                 </li>
                                                 <li className="active">
-                                                    <a href="#modify-psw">修改密码</a>
+                                                    <a href=""></a>
+                                                </li>
+                                                <li className="active">
+                                                    <a href=""></a>
+                                                </li>
+                                                <li className="active">
+                                                    <a href=""></a>
+                                                </li>
+                                                <li className="active">
+                                                    <a href=""></a>
                                                 </li>
                                                 <li className="active">
                                                     <a href=""></a>
@@ -148,6 +166,44 @@ class PersonalCenter extends Component{
                                                             <div className="form-group">
                                                                 <div className="col-sm-offset-2 col-sm-10">
                                                                     <button type="button" className="btn btn-success" onClick={this.modifyUsername.bind(this)}>保存</button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="uploading" id="modify-psw">
+                                            <div className="clearfix">
+                                                <div className="modify-box">
+                                                    <h2 className="set-title">修改密码</h2>
+                                                    <div className="modify-psw-box">
+                                                        <form className="form-horizontal">
+                                                            <div className="form-group">
+                                                                <label for="inputEmail3" className="col-sm-2 control-label">当前密码</label>
+                                                                <div className="col-sm-6">
+                                                                    <input type="password" className="form-control" id="oldpsw" ref="oldpsw" placeholder=""/>
+                                                                </div>
+                                                            </div>
+                                                            <div className="form-group">
+                                                                <label for="inputPassword3" className="col-sm-2 control-label">新密码</label>
+                                                                <div className="col-sm-6">
+                                                                    <input type="password" className="form-control" id="newpsw" ref="newpsw" placeholder=""
+                                                                           onBlur={this.verifyPassword.bind(this)} onFocus={this.focusPassword.bind(this)}/>
+                                                                    <span className="input-tips" id="passwordTip"></span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="form-group">
+                                                                <label for="inputPassword3" className="col-sm-2 control-label">再输入一次</label>
+                                                                <div className="col-sm-6">
+                                                                    <input type="password" className="form-control" id="confirmpsw" ref="confirmpsw" placeholder=""
+                                                                           onBlur={this.repeatPassword.bind(this)} onFocus={this.focusConfirm.bind(this)}/>
+                                                                    <span className="input-tips" id="repeatTip"></span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="form-group">
+                                                                <div className="col-sm-offset-2 col-sm-10">
+                                                                    <button type="button" className="btn btn-success" onClick={this.modifyPsw.bind(this)}>保存</button>
                                                                 </div>
                                                             </div>
                                                         </form>
@@ -204,44 +260,7 @@ class PersonalCenter extends Component{
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="uploading" id="modify-psw">
-                                            <div className="clearfix">
-                                                <div className="modify-box">
-                                                    <h2 className="set-title">修改密码</h2>
-                                                    <div className="modify-psw-box">
-                                                        <form className="form-horizontal">
-                                                            <div className="form-group">
-                                                                <label for="inputEmail3" className="col-sm-2 control-label">当前密码</label>
-                                                                <div className="col-sm-6">
-                                                                    <input type="password" className="form-control" id="oldpsw" ref="oldpsw" placeholder=""/>
-                                                                </div>
-                                                            </div>
-                                                            <div className="form-group">
-                                                                <label for="inputPassword3" className="col-sm-2 control-label">新密码</label>
-                                                                <div className="col-sm-6">
-                                                                    <input type="password" className="form-control" id="newpsw" ref="newpsw" placeholder=""
-                                                                    onBlur={this.verifyPassword.bind(this)} onFocus={this.focusPassword.bind(this)}/>
-                                                                    <span className="input-tips" id="passwordTip"></span>
-                                                                </div>
-                                                            </div>
-                                                            <div className="form-group">
-                                                                <label for="inputPassword3" className="col-sm-2 control-label">再输入一次</label>
-                                                                <div className="col-sm-6">
-                                                                    <input type="password" className="form-control" id="confirmpsw" ref="confirmpsw" placeholder=""
-                                                                    onBlur={this.repeatPassword.bind(this)} onFocus={this.focusConfirm.bind(this)}/>
-                                                                    <span className="input-tips" id="repeatTip"></span>
-                                                                </div>
-                                                            </div>
-                                                            <div className="form-group">
-                                                                <div className="col-sm-offset-2 col-sm-10">
-                                                                    <button type="button" className="btn btn-success" onClick={this.modifyPsw.bind(this)}>保存</button>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>

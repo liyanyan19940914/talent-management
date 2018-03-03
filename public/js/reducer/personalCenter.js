@@ -1,4 +1,4 @@
-module.exports=(state={update:false,updateUsername:false,sendMessage:[]},action)=>{
+module.exports=(state={update:false,updateUsername:false,sendMessage:[],deleteMessage:false},action)=>{
     switch(action.type){
         case 'UPDATE-PSW':
             state.update = action.status;
@@ -14,6 +14,9 @@ module.exports=(state={update:false,updateUsername:false,sendMessage:[]},action)
             return Object.assign({},state);
         case "PERSONAL-MESSAGE":
             state.sendMessage = action.status;
+            return Object.assign({},state);
+        case "DELETE-SUCCESS":
+            state.deleteMessage = action.status;
             return Object.assign({},state);
         default:
             return state;
