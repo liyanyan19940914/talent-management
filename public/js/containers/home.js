@@ -10,6 +10,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         getAllCoverMessage:()=>{
             dispatch({type:'GET-ALL-COVER-MESSAGE'})
+        },
+        searchInfo:(data)=>{
+            dispatch({type:'SEARCH-INFO',data})
         }
     }
 }

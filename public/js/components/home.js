@@ -7,16 +7,24 @@ class Home extends Component{
     componentWillMount(){
         this.props.getAllCoverMessage();
     }
+    search(){
+        let info = this.refs.info.value;
+        if (info){
+            this.props.searchInfo({info});
+        }else{
+            this.props.getAllCoverMessage();
+        }
+    }
     render(){
-        let coverMessages = this.props.home;
+        let coverMessages = this.props.home.message;
         return <div>
             <Nav/>
                 <div className="contain-header">
                     <div className="search-wrapper">
                         <div className="search-box">
                             <form className="searchForm clearfix">
-                                <input type="text" className="search-input" placeholder="搜索职位，地点"/>
-                                <input type="submit" className="search-button"/>
+                                <input type="text" className="search-input" ref="info" placeholder="搜索职位，地点"/>
+                                <button type="button" className="search-button" onClick={this.search.bind(this)}>查询</button>
                             </form>
                         </div>
                     </div>

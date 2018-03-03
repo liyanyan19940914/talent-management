@@ -1,7 +1,8 @@
-module.exports = (state={},action)=>{
+module.exports = (state={message:[]},action)=>{
     switch(action.type){
         case 'ALL-COVER-MESSAGE':
-            return action.status;
+            state.message = action.status;
+            return {message:[...state.message]};
         default:
             return state;
     }
