@@ -11,12 +11,13 @@
 }
 #lg-tbar-r{
     float:right;
+    margin-right: 18px;
 }
 .topic{
     line-height:30px;
     font-size: 14px;
     color: white;
-    padding:0 0 0 12px;
+    padding:0 0 0 30px;
 }
 .login{
     padding: 0 12px;
