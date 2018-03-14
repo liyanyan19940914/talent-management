@@ -27,6 +27,7 @@ app.post('/profile', upload.single('avatar'), (req, res, next)=> {
         filePath: 'uploads/' + path.basename(req.file.path)
     });
 });
+
 app.use(cookieParser());
 app.use(session({
     secret: 'a',

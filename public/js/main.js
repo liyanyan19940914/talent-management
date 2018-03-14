@@ -13,6 +13,7 @@ import Home from './containers/home';
 import ReadCoverMessage from './containers/readCoverMessage';
 import PersonalCenter from './containers/personalCenter';
 import EditCoverMessage from './containers/editCoverMessage';
+import Upload from './containers/fileUpload';
 
 import registerMiddleware from './middleware/register';
 import loginMiddleware from './middleware/login';
@@ -36,7 +37,8 @@ render(
             <Route path="/readCoverMessage" component={ReadCoverMessage}/>
             <Route path="/postCoverMessage" component={PostCoverMessage}/>
             <Route path="/personalCenter" component={PersonalCenter}/>
-            <Route path="/editMessage" components={EditCoverMessage}/>
+            <Route path="/editMessage" component={EditCoverMessage}/>
+            <Route path="upload" component={Upload}/>
         </Router>
     </Provider>, document.getElementById('app')
 );
