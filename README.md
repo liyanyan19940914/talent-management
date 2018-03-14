@@ -8,6 +8,10 @@
 
 最后使用浏览器打开``http://localhost:3000``
 
+数据库名称：``talentManagement``
+
+
+
 创建user的表：
 
 ```
@@ -17,6 +21,9 @@ create table user(
     password varchar(100) not null
 )default charset=utf8;
 ```
+
+username：用户名设置为4-6位字母数字
+password：请将密码设置为6-16位字母数字
 
 创建postCoverMessage的表：
 
