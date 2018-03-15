@@ -19,7 +19,7 @@ class Nav extends Component{
             let parts = Cookie.split('=');
             cookies[parts[0].trim()] = (parts[1]).trim();
         });
-        let isLogin = this.props.login.loginUser;
+        let isLogin = this.props.nav;
         let user = cookies.username;
         if (user === isLogin) {
             browserHistory.push('/postCoverMessage')
@@ -36,7 +36,7 @@ class Nav extends Component{
             let parts = Cookie.split('=');
             cookies[parts[0].trim()] = (parts[1]).trim();
         });
-        let isLogin = this.props.login.loginUser;
+        let isLogin = this.props.nav;
         let user = cookies.username;
         if (user === isLogin) {
             let path = "personalCenter?username="+user;
