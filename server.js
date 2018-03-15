@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const cookieParser = require("cookie-parser");
 const multer = require("multer");
+const fs = require('fs');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -49,6 +50,7 @@ const deleteCoverMessage = require('./server/routers/deleteCoverMessage');
 const searchMessage = require('./server/routers/searchMessage');
 const legalUsername = require('./server/routers/legalUsername');
 const logout = require('./server/routers/logout');
+const readCoverMessage = require('./server/routers/download');
 
 app.use('/',addUser);
 app.use('/',findUser);
@@ -63,6 +65,7 @@ app.use('/',deleteCoverMessage);
 app.use('/',searchMessage);
 app.use('/',legalUsername);
 app.use('/',logout);
+app.use('/',readCoverMessage);
 
 app.get('*', (req, res) => {
     "use strict";

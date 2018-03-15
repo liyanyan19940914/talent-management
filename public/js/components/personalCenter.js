@@ -5,7 +5,7 @@ import {Link, browserHistory} from 'react-router';
 
 class PersonalCenter extends Component{
     componentWillMount(){
-        this.props.personalSend({username:this.props.login.loginUser})
+        this.props.personalSend({username:this.props.nav})
     }
     verifyPassword(){
         let password = this.refs.newpsw.value;

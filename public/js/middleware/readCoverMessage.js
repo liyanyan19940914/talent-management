@@ -6,7 +6,8 @@ export default store => next => action => {
             request.post('/downloadFile')
                 .send(action.data)
                 .end((err,res) => {
-                    next({type:'DOWNLOAD-FILE'});
+                    console.log('download',res.text);
+                    next({type:'DOWNLOAD-FILE',status:res.text});
                 });
             break;
     }
