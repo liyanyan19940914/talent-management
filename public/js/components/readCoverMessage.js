@@ -3,6 +3,13 @@ import Nav from '../containers/nav';
 import Footer from '../containers/footer';
 
 class ReadCoverMessage extends Component{
+    download(file){
+        const fileArray = file.split('/');
+        const dir = fileArray[0];
+        const fileName = fileArray[1];
+        console.log(dir,fileName);
+        this.props.downloadFile({dir,fileName});
+    }
     render(){
         const message = this.props.location.query;
         console.log(message);
@@ -220,6 +227,12 @@ class ReadCoverMessage extends Component{
                                         <label for="inputEmail3" className="col-sm-2 control-label">自我评价</label>
                                         <div className="col-sm-8">
                                             <textarea className="form-control" rows="3" ref="evaluate" placeholder={message.evaluate} readOnly="readOnly"></textarea>
+                                        </div>
+                                    </div>
+                                    <div className="form-group">
+                                        <label for="inputEmail3" className="col-sm-2 control-label">简历</label>
+                                        <div className="col-sm-8">
+                                            <span className="fileUpload" onClick={this.download.bind(this,message.fileUpload)}>{message.fileUpload}</span>
                                         </div>
                                     </div>
                                 </form>

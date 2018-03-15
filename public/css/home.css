@@ -135,3 +135,11 @@
 .pli-locattion{
     margin-left: 10px;
 }
+
+.fileUpload{
+    height:34px;
+    line-height: 34px;
+    padding:6px 12px;
+    font-size: 14px;
+    color:#555;
+}

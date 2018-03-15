@@ -22,9 +22,10 @@ import homeMiddleware from './middleware/home';
 import personalCenterMiddleware from './middleware/personalCenter';
 import editCoverMessageMiddleware from './middleware/editCoverMessage';
 import navMiddleware from './middleware/nav';
+import readCoverMessageMiddleware from './middleware/readCoverMessage';
 
 const createStoreWithMiddleware = applyMiddleware(registerMiddleware,loginMiddleware,postCoverMessageMiddleware,
-    homeMiddleware,personalCenterMiddleware,editCoverMessageMiddleware,navMiddleware)(createStore);
+    homeMiddleware,personalCenterMiddleware,editCoverMessageMiddleware,navMiddleware,readCoverMessageMiddleware)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 
