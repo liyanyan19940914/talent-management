@@ -6,10 +6,12 @@ import postCoverMessage from './postCoverMessage';
 import home from './home';
 import personalCenter from './personalCenter';
 import editCoverMessage from './editCoverMessage';
+import nav from './nav';
 
 export default combineReducers({
     register,
     login,
+    nav,
     fileUpload,
     postCoverMessage,
     home,

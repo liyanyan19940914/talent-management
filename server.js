@@ -47,6 +47,7 @@ const personalSend = require('./server/routers/findPersonalMessage');
 const updateCoverMessage = require('./server/routers/updateCoverMessage');
 const deleteCoverMessage = require('./server/routers/deleteCoverMessage');
 const searchMessage = require('./server/routers/searchMessage');
+const legalUsername = require('./server/routers/legalUsername');
 
 app.use('/',addUser);
 app.use('/',findUser);
@@ -59,6 +60,7 @@ app.use('/',personalSend);
 app.use('/',updateCoverMessage);
 app.use('/',deleteCoverMessage);
 app.use('/',searchMessage);
+app.use('/',legalUsername);
 
 app.get('*', (req, res) => {
     "use strict";

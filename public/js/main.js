@@ -21,9 +21,10 @@ import postCoverMessageMiddleware from './middleware/postCoverMessage';
 import homeMiddleware from './middleware/home';
 import personalCenterMiddleware from './middleware/personalCenter';
 import editCoverMessageMiddleware from './middleware/editCoverMessage';
+import navMiddleware from './middleware/nav';
 
 const createStoreWithMiddleware = applyMiddleware(registerMiddleware,loginMiddleware,postCoverMessageMiddleware,
-    homeMiddleware,personalCenterMiddleware,editCoverMessageMiddleware)(createStore);
+    homeMiddleware,personalCenterMiddleware,editCoverMessageMiddleware,navMiddleware)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 

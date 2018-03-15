@@ -7,7 +7,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) =>{
     return {
-
+        loadUsername:() => {
+            dispatch ({type:'LOAD-USERNAME'})
+        }
     }
 };
 
