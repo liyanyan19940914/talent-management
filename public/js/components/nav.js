@@ -45,6 +45,9 @@ class Nav extends Component{
             browserHistory.push('/login');
         }
     }
+    logout(){
+        this.props.logoutUser();
+    }
     render(){
         console.log(this.props.nav);
         return <div>
@@ -59,6 +62,7 @@ class Nav extends Component{
                     </div>
                     <div id="lg-tbar-r" className = {this.props.nav ? '':'hidden'}>
                         <span className="login">{this.props.nav+', 你好！'}</span>
+                        <span className="login" onClick={this.logout.bind(this)}>注销</span>
                     </div>
                 </div>
             </div>
