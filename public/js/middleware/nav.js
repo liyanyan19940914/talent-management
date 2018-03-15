@@ -12,8 +12,10 @@ export default store => next => action => {
         case "LOGOUT":
             request.get('/logout')
                 .end((err,res) => {
+                    console.log('logout',res.text);
                     next({type:'USERNAME-GO',status:res.text})
                 })
+            break;
     }
     next(action);
 }

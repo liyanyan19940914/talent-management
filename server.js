@@ -48,6 +48,7 @@ const updateCoverMessage = require('./server/routers/updateCoverMessage');
 const deleteCoverMessage = require('./server/routers/deleteCoverMessage');
 const searchMessage = require('./server/routers/searchMessage');
 const legalUsername = require('./server/routers/legalUsername');
+const logout = require('./server/routers/logout');
 
 app.use('/',addUser);
 app.use('/',findUser);
@@ -61,6 +62,7 @@ app.use('/',updateCoverMessage);
 app.use('/',deleteCoverMessage);
 app.use('/',searchMessage);
 app.use('/',legalUsername);
+app.use('/',logout);
 
 app.get('*', (req, res) => {
     "use strict";
