@@ -4,7 +4,7 @@ import Footer from '../containers/footer';
 import {Link, browserHistory} from 'react-router';
 
 class PersonalCenter extends Component{
-    componentWillMount(){
+    getMessage(){
         this.props.personalSend({username:this.props.nav})
     }
     verifyPassword(){
@@ -88,7 +88,7 @@ class PersonalCenter extends Component{
             this.props.resetUpdateUsername({updateUsername:false});
         }
         else if(nextProps.personalCenter.deleteMessage === 1){
-            this.props.personalSend({username:this.props.login.loginUser});
+            this.props.personalSend({username:this.props.nav});
         }else if(nextProps.personalCenter.deleteMessage === 0){
             alert('删除失败！');
         }
@@ -116,7 +116,7 @@ class PersonalCenter extends Component{
                                                     <a href="#modify-psw">修改密码</a>
                                                 </li>
                                                 <li className="active">
-                                                    <a href="#send">我的发布</a>
+                                                    <a href="#send" onClick={this.getMessage.bind(this)}>我的发布</a>
                                                 </li>
                                                 <li className="active">
                                                     <a href=""></a>

@@ -152,16 +152,25 @@ class PostCoverMessage extends Component{
             let hobby = this.refs.hobby.value;
             let evaluate = this.refs.evaluate.value;
             let fileUpload = this.props.fileUpload;
-            let username = this.props.login.loginUser;
+            let username = this.props.nav;
             console.log(username,name,sex,tel,email,job,schoolName,date1,date2,major,academic,projectName,standard,
                 rol,describe,summary,duty,jobType,city,pay,industry,occupation,hobby,evaluate,fileUpload);
-            this.props.postCoverMessage({username,name,sex,tel,email,job,schoolName,date1,date2,major,academic,projectName,standard,
+            this.props.onPostCoverMessage({username,name,sex,tel,email,job,schoolName,date1,date2,major,academic,projectName,standard,
             rol,describe,summary,duty,jobType,city,pay,industry,occupation,hobby,evaluate,fileUpload});
         }else{
             alert('请补全信息');
         }
     }
-
+    componentWillUpdate(nextProps){
+        console.log('component',nextProps.postCoverMessage.isSave);
+        if(nextProps.postCoverMessage.isSave === true){
+            alert("发布成功");
+            this.props.resetMessage({isSave:false});
+        }else if(nextProps.postCoverMessage.isSave){
+            alert("发布失败");
+            this.props.resetMessage({isSave:false});
+        }
+    }
     render(){
         return <div>
             <Nav/>
