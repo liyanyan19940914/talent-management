@@ -12,7 +12,7 @@
 }
 .text{
     color:white;
-    margin-left: 300px;
+    margin-left: 23%;
 }
 .text-ele{
     height:60px;
@@ -20,7 +20,7 @@
     font-size: 20px;
 }
 .count-wrapper{
-    margin-left: 300px;
+    margin-left: 29%;
 }
 .line{
     margin:19px 20px 0;
@@ -30,14 +30,14 @@
     opacity: .4;
 }
 .logo{
-    width:99px;
+    width:8%;
     height: 86px;
     background-image: url('../images/login_officer_bg_8c1de01.png');
     background-repeat:no-repeat ;
     background-size: 99px 86px;
     position: absolute;
     bottom: 0px;
-    margin-left: 100px;
+    margin-left: 7.7%;
 }
 em{
     font-style: normal;

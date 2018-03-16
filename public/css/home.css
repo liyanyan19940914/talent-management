@@ -9,7 +9,7 @@
 
 .search-box{
     border:0 solid #00b3a8;
-    width:938px;
+    width:72.1%;
     height:46px;
     margin-left: auto;
     margin-right: auto;
@@ -17,7 +17,7 @@
 }
 
 .search-input{
-    width:762px;
+    width:81.24%;
     height:40px;
     line-height:40px;
     float: left;
@@ -28,7 +28,7 @@
 
 .search-button{
     float:left;
-    width: 142px;
+    width: 18.76%;
     height:40px;
     font-size: 18px;
     color:#ffffff;
