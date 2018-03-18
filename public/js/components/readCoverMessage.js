@@ -4,15 +4,15 @@ import Footer from '../containers/footer';
 
 class ReadCoverMessage extends Component{
     download(file){
-        const fileArray = file.split('/');
-        const dir = fileArray[0];
-        const fileName = fileArray[1];
-        console.log(dir,fileName);
-        this.props.downloadFile({dir,fileName});
+        //const fileArray = file.split('/');
+        // const dir = fileArray[0];
+        //const fileName = fileArray[1];
+        // console.log(dir,fileName);
+        // this.props.downloadFile({dir,fileName});
+        window.open('public/'+file, 'newwindow', 'height=100, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no');////该代码要在一行展现
     }
     render(){
         const message = this.props.location.query;
-        console.log(message);
         return <div>
             <Nav/>
             <div className="post-box">
@@ -232,11 +232,27 @@ class ReadCoverMessage extends Component{
                                     <div className="form-group">
                                         <label for="inputEmail3" className="col-sm-2 control-label">简历</label>
                                         <div className="col-sm-8">
-                                            <span className="fileUpload" onClick={this.download.bind(this,message.fileUpload)}>{message.fileUpload}</span>
+                                            <a className="fileUpload" name="fileUpload" onClick={this.download.bind(this,message.fileUpload)}>{message.fileUpload}</a>
                                         </div>
                                     </div>
                                 </form>
                             </div>
+                        </div>
+                        <h2 className="talking">发表评论</h2>
+                        <form className="form-horizontal">
+                            <div className="form-group">
+                                <div className="col-sm-12">
+                                    <textarea className="form-control" rows="3" ref="talk" placeholder="写下你的评论..."></textarea>
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <button type="button" className="btn btn-default col-sm-offset-8 col-sm-1">取消</button>
+                                <button type="button" className="btn btn-info col-sm-offset-1 col-sm-1">发布</button>
+                            </div>
+                        </form>
+                        <h2 className="talking">评论</h2>
+                        <div className="list-empty">
+                            <span>该信息尚未收到邀约评论</span>
                         </div>
                     </div>
                 </div>
