@@ -15,7 +15,7 @@ export default store => next => action => {
                 .send(action.data)
                 .end((err,res) => {
                     console.log('discuess',res.body.status);
-                    next({type:'DISCUESS-LIST',status:res.body.status});
+                    next({type:'DISCUSS-LIST',status:res.body.status});
                 });
             break;
     }

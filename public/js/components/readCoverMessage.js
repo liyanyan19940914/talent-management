@@ -32,6 +32,17 @@ class ReadCoverMessage extends Component{
             this.props.sendDiscuess({message_id,username,talk});
         }
     }
+
+    componentWillUpdate(nextProps){
+        if(nextProps.readCoverMessage.isSend === true){
+            alert('发布成功！');
+            this.props.resetDiscuss({isSend:false});
+        }else if(nextProps.readCoverMessage.isSend){
+            alert('发布失败！');
+            this.props.resetDiscuss({isSend:false});
+        }
+    }
+
     render(){
         const message = this.props.location.query;
         return <div>
@@ -263,7 +274,7 @@ class ReadCoverMessage extends Component{
                         <form className="form-horizontal">
                             <div className="form-group">
                                 <div className="col-sm-12">
-                                    <textarea className="form-control" rows="3" ref="talk" placeholder="写下你的评论..." 
+                                    <textarea className="form-control" rows="3" ref="talk" placeholder="写下你的评论..."
                                     onFocus={this.focusDiscuss.bind(this)}></textarea>
                                 </div>
                             </div>

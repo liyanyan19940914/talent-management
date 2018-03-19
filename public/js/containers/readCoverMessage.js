@@ -12,6 +12,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         sendDiscuess:(data) => {
             dispatch({type:'SEND-DISCUESS',data})
+        },
+        resetDiscuss:(data) => {
+            dispatch({type:'RESET-DISCUSS',data})
         }
     }
 }
