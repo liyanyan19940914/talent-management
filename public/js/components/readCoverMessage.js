@@ -11,12 +11,28 @@ class ReadCoverMessage extends Component{
         // this.props.downloadFile({dir,fileName});
         window.open('public/'+file, 'newwindow', 'height=100, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no');////该代码要在一行展现
     }
+
+    blueDiscuss(){
+
+    }
+    focusDiscuss(){
+        let buttons = this.refs.buttonGroup;
+        buttons.style.display = 'inline';
+    }
     discuess(){
         let message_id = this.props.location.query.message_id;
         let username = this.props.nav;
         let talk = this.refs.talk.value;
-        console.log(message_id,username,talk);
-        this.props.sendDiscuess({message_id,username,talk});
+        if(talk === ""){
+            alert('回复内容不能为空！')
+        }else{
+            let buttons = this.refs.buttonGroup;
+            buttons.style.display = 'none';
+            let discuss = this.refs.talk;
+            discuss.value = "";
+            discuss.style.placeholder = "写下你的评论...";
+            this.props.sendDiscuess({message_id,username,talk});
+        }
     }
     render(){
         const message = this.props.location.query;
@@ -249,10 +265,11 @@ class ReadCoverMessage extends Component{
                         <form className="form-horizontal">
                             <div className="form-group">
                                 <div className="col-sm-12">
-                                    <textarea className="form-control" rows="3" ref="talk" placeholder="写下你的评论..."></textarea>
+                                    <textarea className="form-control" rows="3" ref="talk" placeholder="写下你的评论..." onBlur={this.blueDiscuss.bind(this)}
+                                    onFocus={this.focusDiscuss.bind(this)}></textarea>
                                 </div>
                             </div>
-                            <div className="form-group">
+                            <div className="form-group button-group" ref="buttonGroup">
                                 <button type="button" className="btn btn-default col-sm-offset-8 col-sm-1">取消</button>
                                 <button type="button" className="btn btn-info col-sm-offset-1 col-sm-1" onClick={this.discuess.bind(this)}>发布</button>
                             </div>
