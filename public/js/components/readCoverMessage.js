@@ -14,6 +14,7 @@ class ReadCoverMessage extends Component{
 
     componentWillMount(){
         let message_id = this.props.location.query.message_id;
+        console.log(message_id);
         this.props.getDiscuss({message_id});
     }
 
@@ -41,7 +42,9 @@ class ReadCoverMessage extends Component{
     componentWillUpdate(nextProps){
         if(nextProps.readCoverMessage.isSend === true){
             alert('发布成功！');
-            this.props.resetDiscuss({isSend:false});
+            let message_id = this.props.location.query.message_id;
+            this.props.getDiscuss({message_id});
+            // this.props.resetDiscuss({isSend:false});
         }else if(nextProps.readCoverMessage.isSend){
             alert('发布失败！');
             this.props.resetDiscuss({isSend:false});
@@ -50,6 +53,8 @@ class ReadCoverMessage extends Component{
 
     render(){
         const message = this.props.location.query;
+        let discuss = this.props.readCoverMessage.discuss;
+        console.log('discuss component',discuss,discuss.length);
         return <div>
             <Nav/>
             <div className="post-box">
@@ -289,8 +294,22 @@ class ReadCoverMessage extends Component{
                             </div>
                         </form>
                         <h2 className="talking">评论</h2>
-                        <div className="list-empty">
-                            <span>该信息尚未收到邀约评论</span>
+                        <div id="list-empty" className={discuss.length === 0 ? '':'hidden'} >
+                            <div id="tip">
+                                <span >该信息尚未收到邀约评论</span>
+                            </div>
+                        </div>
+                        <div id="list-empty" className={discuss.length === 0 ? 'hidden':''}>
+                            <div className="ds-list">
+                                {
+                                    discuss.map((ele,index) => {
+                                        return <div key={index} className="discuss-list">
+                                            <span className="col-sm-3 ">{ele.user}</span>
+                                            <span className="col-sm-offset-1 col-sm-8">{ele.discuess}</span>
+                                        </div>
+                                    })
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>

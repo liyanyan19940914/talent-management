@@ -7,11 +7,26 @@
     font:normal 18px/28px 'Microsoft Yahei','SimHei';
 }
 
-.list-empty{
+.button-group{
+    display: none;
+}
+
+#tip{
     margin:80px 0;
     text-align:center;
 }
 
-.button-group{
-    display: none;
+.divide{
+    border-bottom: 1px solid #999999;
+}
+
+.discuss-list{
+    height:28px;
+    line-height:28px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #999999;
+}
+
+.ds-list{
+    margin:20px 0 40px 0;
 }

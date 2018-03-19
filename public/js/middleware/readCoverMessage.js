@@ -14,14 +14,15 @@ export default store => next => action => {
             request.post('/discuess')
                 .send(action.data)
                 .end((err,res) => {
-                    console.log('discuess',res.body.status);
                     next({type:'DISCUSS-LIST',status:res.body.status});
                 });
             break;
         case 'GET-ALL-DISCUSS':
-            request.get('/getAllDiscuss')
+            console.log('discuss',action.data);
+            request.post('/getAllDiscuss')
                 .send(action.data)
                 .end((err,res) => {
+                    console.log(res.body.status);
                     next({type:'ALL-DISCUSS',status:res.body.status});
                 });
             break;
