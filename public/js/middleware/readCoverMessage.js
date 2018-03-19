@@ -18,6 +18,13 @@ export default store => next => action => {
                     next({type:'DISCUSS-LIST',status:res.body.status});
                 });
             break;
+        case 'GET-ALL-DISCUSS':
+            request.get('/getAllDiscuss')
+                .send(action.data)
+                .end((err,res) => {
+                    next({type:'ALL-DISCUSS',status:res.body.status});
+                });
+            break;
     }
     next(action);
 }

@@ -15,6 +15,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         resetDiscuss:(data) => {
             dispatch({type:'RESET-DISCUSS',data})
+        },
+        getDiscuss:(data) => {
+            dispatch({type:'GET-ALL-DISCUSS',data})
         }
     }
 }
