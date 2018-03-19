@@ -51,6 +51,7 @@ const searchMessage = require('./server/routers/searchMessage');
 const legalUsername = require('./server/routers/legalUsername');
 const logout = require('./server/routers/logout');
 const readCoverMessage = require('./server/routers/download');
+const insertDiscuess = require('./server/routers/insertDiscuess');
 
 app.use('/',addUser);
 app.use('/',findUser);
@@ -66,6 +67,7 @@ app.use('/',searchMessage);
 app.use('/',legalUsername);
 app.use('/',logout);
 app.use('/',readCoverMessage);
+app.use('/',insertDiscuess);
 
 app.get('*', (req, res) => {
     "use strict";

@@ -14,7 +14,8 @@ export default store => next => action => {
             request.post('/discuess')
                 .send(action.data)
                 .end((err,res) => {
-                    next({type:'DISCUESS-LIST',status:res.body.state});
+                    console.log('discuess',res.body.status);
+                    next({type:'DISCUESS-LIST',status:res.body.status});
                 });
             break;
     }
