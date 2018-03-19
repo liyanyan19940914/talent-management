@@ -11,6 +11,13 @@ class ReadCoverMessage extends Component{
         // this.props.downloadFile({dir,fileName});
         window.open('public/'+file, 'newwindow', 'height=100, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no');////该代码要在一行展现
     }
+    discuess(){
+        let message_id = this.props.location.query.message_id;
+        let username = this.props.nav;
+        let talk = this.refs.talk.value;
+        console.log(message_id,username,talk);
+        this.props.sendDiscuess({message_id,username,talk});
+    }
     render(){
         const message = this.props.location.query;
         return <div>
@@ -247,7 +254,7 @@ class ReadCoverMessage extends Component{
                             </div>
                             <div className="form-group">
                                 <button type="button" className="btn btn-default col-sm-offset-8 col-sm-1">取消</button>
-                                <button type="button" className="btn btn-info col-sm-offset-1 col-sm-1">发布</button>
+                                <button type="button" className="btn btn-info col-sm-offset-1 col-sm-1" onClick={this.discuess.bind(this)}>发布</button>
                             </div>
                         </form>
                         <h2 className="talking">评论</h2>

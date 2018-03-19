@@ -10,6 +10,13 @@ export default store => next => action => {
                     next({type:'DOWNLOAD-FILE',status:res.text});
                 });
             break;
+        case 'SEND-DISCUESS':
+            request.post('/discuess')
+                .send(action.data)
+                .end((err,res) => {
+                    next({type:'DISCUESS-LIST',status:res.body.state});
+                });
+            break;
     }
     next(action);
 }

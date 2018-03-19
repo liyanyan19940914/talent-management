@@ -58,5 +58,12 @@ create table postCoverMessage(
     primary key (message_id)
 )default charset=utf8;
 ```
+创建评论表：
 
+create table discuessList(
+    discuess_id INT UNSIGNED AUTO_INCREMENT primary key,
+    message_id int not null,
+    user varchar(100) not null,
+    discuess varchar(400)
+)default charset=utf8;
 
