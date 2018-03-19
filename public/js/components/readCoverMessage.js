@@ -12,13 +12,11 @@ class ReadCoverMessage extends Component{
         window.open('public/'+file, 'newwindow', 'height=100, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no');////该代码要在一行展现
     }
 
-    blueDiscuss(){
-
-    }
     focusDiscuss(){
         let buttons = this.refs.buttonGroup;
         buttons.style.display = 'inline';
     }
+
     discuess(){
         let message_id = this.props.location.query.message_id;
         let username = this.props.nav;
@@ -265,7 +263,7 @@ class ReadCoverMessage extends Component{
                         <form className="form-horizontal">
                             <div className="form-group">
                                 <div className="col-sm-12">
-                                    <textarea className="form-control" rows="3" ref="talk" placeholder="写下你的评论..." onBlur={this.blueDiscuss.bind(this)}
+                                    <textarea className="form-control" rows="3" ref="talk" placeholder="写下你的评论..." 
                                     onFocus={this.focusDiscuss.bind(this)}></textarea>
                                 </div>
                             </div>
