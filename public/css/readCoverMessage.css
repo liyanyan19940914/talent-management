@@ -21,12 +21,23 @@
 }
 
 .discuss-list{
-    height:28px;
-    line-height:28px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #999999;
+    padding:30px 10px 0 10px;
 }
 
 .ds-list{
     margin:20px 0 40px 0;
+}
+
+.user{
+    font-size: 18px;
+}
+.date{
+    font-size: 12px;
+    color: #999999;
+}
+
+.list-discuss{
+    padding:10px;
+    margin-bottom: 15px;
+    background-color: #ffffff;
 }
