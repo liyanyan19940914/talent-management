@@ -4,7 +4,7 @@ import Footer from '../containers/footer';
 import {Link, browserHistory} from 'react-router';
 
 class PersonalCenter extends Component{
-    getMessage(){
+    componentWillMount(){
         this.props.personalSend({username:this.props.nav})
     }
     verifyPassword(){
@@ -116,7 +116,7 @@ class PersonalCenter extends Component{
                                                     <a href="#modify-psw">修改密码</a>
                                                 </li>
                                                 <li className="active">
-                                                    <a href="#send" onClick={this.getMessage.bind(this)}>我的发布</a>
+                                                    <a href="#send">我的发布</a>
                                                 </li>
                                                 <li className="active">
                                                     <a href=""></a>
