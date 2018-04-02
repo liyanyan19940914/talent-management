@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import Nav from '../containers/nav';
 import Footer from '../containers/footer';
+import {Link, browserHistory} from 'react-router';
 
 class ReadCoverMessage extends Component{
     download(file){
@@ -31,17 +32,25 @@ class ReadCoverMessage extends Component{
         let year = date.getFullYear();
         let month = date.getMonth()+1;
         let day = date.getDate();
-        let time = year+"-"+month+"-"+day;
-        if(talk === ""){
-            alert('回复内容不能为空！')
+        let hours = date.getHours();
+        let min = date.getMinutes();
+        let second = date.getSeconds();
+        let time = year+"-"+month+"-"+day+' '+hours+':'+min+':'+second;
+        if(this.props.nav != ''){
+            if(talk === ""){
+                alert('回复内容不能为空！')
+            }else{
+                let buttons = this.refs.buttonGroup;
+                buttons.style.display = 'none';
+                let discuss = this.refs.talk;
+                discuss.value = "";
+                discuss.style.placeholder = "写下你的评论...";
+                this.props.sendDiscuess({message_id,username,talk,time});
+            }
         }else{
-            let buttons = this.refs.buttonGroup;
-            buttons.style.display = 'none';
-            let discuss = this.refs.talk;
-            discuss.value = "";
-            discuss.style.placeholder = "写下你的评论...";
-            this.props.sendDiscuess({message_id,username,talk,time});
+            browserHistory.push('/login');
         }
+
     }
 
     componentWillUpdate(nextProps){
@@ -310,7 +319,7 @@ class ReadCoverMessage extends Component{
                                         return <div key={index} className="list-discuss">
                                             <div>
                                                 <span className="col-sm-2 user">{ele.user}</span>
-                                                <span className="col-sm-offset-8 col-sm-2 date">{ele.date}</span>
+                                                <span className="col-sm-offset-7 col-sm-3 date">{ele.date}</span>
                                             </div>
                                             <div className="discuss-list">
                                                 <span>{ele.discuess}</span>
