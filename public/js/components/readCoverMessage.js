@@ -278,7 +278,7 @@ class ReadCoverMessage extends Component{
                                     <div className="form-group">
                                         <label for="inputEmail3" className="col-sm-2 control-label">简历</label>
                                         <div className="col-sm-8">
-                                            <a className="fileUpload" id="fileUpload" href="./public">{message.fileUpload}</a>
+                                            <a className="fileUpload" id="fileUpload" href={message.fileUpload} download={message.fileUpload}>{message.fileUpload}</a>
                                         </div>
                                     </div>
                                 </form>
