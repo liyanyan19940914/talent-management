@@ -47,6 +47,7 @@ class Nav extends Component{
     }
     logout(){
         this.props.logoutUser();
+        browserHistory.push('/login');
     }
     render(){
         console.log(this.props.nav);

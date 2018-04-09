@@ -75,13 +75,22 @@ class PersonalCenter extends Component{
     }
     componentWillUpdate(nextProps){
         if(nextProps.personalCenter.update === 1){
-            alert('修改成功！');
+            let isOk = confirm('修改成功！');
+            if(isOk){
+                browserHistory.push('/login');
+            }
             this.props.resetUpdate({update:false});
         }else if(nextProps.personalCenter.update === 0){
             alert('当前密码错误！');
             this.props.resetUpdate({update:false});
         }else if(nextProps.personalCenter.updateUsername === 1){
-            alert('修改成功！');
+            let isUsername = confirm('修改成功！');
+            let newUsername = this.refs.newUsername.value;
+            console.log(newUsername);
+            if(isUsername){
+                browserHistory.push('/login');
+                // this.props.modifyUser({})
+            }
             this.props.resetUpdateUsername({updateUsername:false})
         }else if(nextProps.personalCenter.updateUsername === 0){
             alert('当前用户名错误！');

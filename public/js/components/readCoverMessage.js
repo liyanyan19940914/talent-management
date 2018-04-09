@@ -5,12 +5,12 @@ import {Link, browserHistory} from 'react-router';
 
 class ReadCoverMessage extends Component{
     download(file){
-        //const fileArray = file.split('/');
-        // const dir = fileArray[0];
-        //const fileName = fileArray[1];
-        // console.log(dir,fileName);
-        // this.props.downloadFile({dir,fileName});
-        window.open('public/'+file, 'newwindow', 'height=100, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no');////该代码要在一行展现
+        const fileArray = file.split('/');
+        const dir = fileArray[0];
+        const fileName = fileArray[1];
+        console.log(dir,fileName);
+        this.props.downloadFile({dir,fileName});
+        // window.open('public/'+file, 'newwindow', 'height=100, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no');////该代码要在一行展现
     }
 
     componentWillMount(){
@@ -284,12 +284,12 @@ class ReadCoverMessage extends Component{
                                             <textarea className="form-control" rows="3" ref="evaluate" placeholder={message.evaluate} readOnly="readOnly"></textarea>
                                         </div>
                                     </div>
-                                    <div className="form-group">
-                                        <label for="inputEmail3" className="col-sm-2 control-label">简历</label>
-                                        <div className="col-sm-8">
-                                            <a className="fileUpload" name="fileUpload" onClick={this.download.bind(this,message.fileUpload)}>{message.fileUpload}</a>
-                                        </div>
-                                    </div>
+                                    {/*<div className="form-group">*/}
+                                        {/*<label for="inputEmail3" className="col-sm-2 control-label">简历</label>*/}
+                                        {/*<div className="col-sm-8">*/}
+                                            {/*<a className="fileUpload" name="fileUpload" onClick={this.download.bind(this,message.fileUpload)}>{message.fileUpload}</a>*/}
+                                        {/*</div>*/}
+                                    {/*</div>*/}
                                 </form>
                             </div>
                         </div>

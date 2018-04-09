@@ -11,10 +11,13 @@ route.post('/downloadFile',function(req, res, next){
         fReadStream;
         console.log(currFile);
     fs.exists(currFile,function(exist) {
+        let headerValue = "attachment;";
+        headerValue += " filename=\"" + encodeURI(filename) +"\";";
+        headerValue += " filename*=utf-8''" + encodeURI(filename);
         if(exist){
             res.set({
-                "Content-type":"application/octet-stream",
-                "Content-Disposition":"attachment;filename="+encodeURI(fileName)
+                "Content-type":"multipart/form-data",
+                "Content-Disposition":headerValue
             });
             fReadStream = fs.createReadStream(currFile);
             fReadStream.on("data",(chunk) => res.write(chunk,"binary"));
