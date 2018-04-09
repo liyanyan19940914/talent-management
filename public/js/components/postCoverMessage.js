@@ -4,13 +4,45 @@ import Footer from '../containers/footer';
 import FileUpload from '../containers/fileUpload';
 
 class PostCoverMessage extends Component{
+    verifyTel(){
+        let tel = this.refs.tel.value;
+        let regexp = /^1[0-9]{10}$/;
+        console.log(regexp.test(tel));
+        if(!regexp.test(tel)){
+            $('#telTip').text('请输入正确的电话号码！');
+        }
+    }
+
+    initTel(){
+        $('#telTip').text("");
+    }
+
+    verifyEmail(){
+        let email = this.refs.email.value;
+        let regexp = /^\w+@\w+(\.\w+){0,3}/;
+        if(!regexp.test(email)){
+            $('#emailTip').text('请输入正确的邮箱！');
+        }
+    }
+
+    initEmail(){
+        $('#emailTip').text("");
+    }
+
     information(){
         let name = this.refs.name.value;
         let sex = this.refs.sex.value;
         let tel = this.refs.tel.value;
         let email = this.refs.email.value;
         let job = this.refs.jobIntension.value;
-        if(name === "" || sex === "" || tel === "" || email === "" || job === ""){
+        let telTip = $('#telTip').text();
+        let emailTip = $('#emailTip').text();
+        if(telTip != ""){
+            $('#tel').focus();
+        }else if(emailTip != ""){
+            $('#email').focus();
+        }
+        else if(name === "" || sex === "" || tel === "" || email === "" || job === ""){
             alert("请补全信息");
         }else{
             this.refs.name.setAttribute('readOnly',true);
@@ -240,13 +272,17 @@ class PostCoverMessage extends Component{
                                     <div className="form-group">
                                         <label for="inputEmail3" className="col-sm-2 control-label">联系方式</label>
                                         <div className="col-sm-8">
-                                            <input type="tel" className="form-control" id="tel" ref="tel" placeholder=""/>
+                                            <input type="tel" className="form-control" id="tel" ref="tel" placeholder=""
+                                            onBlur={this.verifyTel.bind(this)} onFocus={this.initTel.bind(this)}/>
+                                            <span className="input-tips" id="telTip"></span>
                                         </div>
                                     </div>
                                     <div className="form-group">
                                         <label for="inputEmail3" className="col-sm-2 control-label">电子邮箱</label>
                                         <div className="col-sm-8">
-                                            <input type="email" className="form-control" id="email" ref="email" placeholder=""/>
+                                            <input type="email" className="form-control" id="email" ref="email" placeholder=""
+                                            onBlur={this.verifyEmail.bind(this)} onFocus={this.initEmail.bind(this)}/>
+                                            <span className="input-tips" id="emailTip"></span>
                                         </div>
                                     </div>
                                     <div className="form-group">
