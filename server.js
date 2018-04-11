@@ -50,7 +50,6 @@ const deleteCoverMessage = require('./server/routers/deleteCoverMessage');
 const searchMessage = require('./server/routers/searchMessage');
 const legalUsername = require('./server/routers/legalUsername');
 const logout = require('./server/routers/logout');
-const readCoverMessage = require('./server/routers/download');
 const insertDiscuss = require('./server/routers/insertDiscuess');
 const findDiscuss = require('./server/routers/findDiscuss');
 
@@ -67,7 +66,6 @@ app.use('/',deleteCoverMessage);
 app.use('/',searchMessage);
 app.use('/',legalUsername);
 app.use('/',logout);
-app.use('/',readCoverMessage);
 app.use('/',insertDiscuss);
 app.use('/',findDiscuss);
 

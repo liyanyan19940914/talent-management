@@ -7,9 +7,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        downloadFile:(data) => {
-            dispatch({type:'DOWNLOAD',data})
-        },
         sendDiscuess:(data) => {
             dispatch({type:'SEND-DISCUESS',data})
         },
