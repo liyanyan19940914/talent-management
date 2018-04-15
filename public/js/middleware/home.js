@@ -17,6 +17,23 @@ export default store => next => action => {
                     next({type:'ALL-COVER-MESSAGE',status:res.body.coverMessage})
                 });
             break;
+        // case 'SHOW-ADD':
+        //     request.get('/showMessage')
+        //         .query({"index":action.index})
+        //         .end((err, res)=> {
+        //
+        //             next({type: 'GET_ADD_TASKS', status: res.body.status});
+        //         });
+        //     break;
+        // case 'SHOW-SUB':
+        //     console.log('index',action.index)
+        //     request.get('/showSubMessage')
+        //         .query({"index":action.index})
+        //         .end((err, res)=> {
+        //             console.log("show-sub",res.body.status);
+        //             next({type: 'GET_SUB_TASKS', status: res.body.status});
+        //         });
+        //     break;
     }
     next(action);
 }

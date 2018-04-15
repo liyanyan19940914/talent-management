@@ -185,10 +185,18 @@ class PostCoverMessage extends Component{
             let evaluate = this.refs.evaluate.value;
             let fileUpload = this.props.fileUpload;
             let username = this.props.nav;
+            let date = new Date();
+            let year = date.getFullYear();
+            let month = date.getMonth()+1;
+            let day = date.getDate();
+            let hours = date.getHours();
+            let min = date.getMinutes();
+            let second = date.getSeconds();
+            let time = year+"-"+month+"-"+day+' '+hours+':'+min+':'+second;
             console.log(username,name,sex,tel,email,job,schoolName,date1,date2,major,academic,projectName,standard,
                 rol,describe,summary,duty,jobType,city,pay,industry,occupation,hobby,evaluate,fileUpload);
             this.props.onPostCoverMessage({username,name,sex,tel,email,job,schoolName,date1,date2,major,academic,projectName,standard,
-            rol,describe,summary,duty,jobType,city,pay,industry,occupation,hobby,evaluate,fileUpload});
+            rol,describe,summary,duty,jobType,city,pay,industry,occupation,hobby,evaluate,fileUpload,time});
         }else{
             alert('请补全信息');
         }

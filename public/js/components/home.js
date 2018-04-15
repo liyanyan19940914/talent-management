@@ -5,6 +5,8 @@ import Footer from '../containers/footer';
 
 class Home extends Component{
     componentWillMount(){
+        // const index = -2;
+        // this.props.onShowAdd(index);
         this.props.getAllCoverMessage();
     }
     search(){
@@ -14,7 +16,16 @@ class Home extends Component{
         }else{
             this.props.getAllCoverMessage();
         }
+
     }
+    // ShowByPageAdd() {
+    //     console.log(this.props.home.index);
+    //     this.props.onShowAdd(this.props.home.index);
+    // }
+    //
+    // ShowByPageSub() {
+    //     this.props.onShowSub(this.props.home.index);
+    // }
     render(){
         let coverMessages = this.props.home.message;
         return <div>
@@ -66,6 +77,10 @@ class Home extends Component{
                         })
                     }
                 </ul>
+            {/*<ul className="pager">*/}
+                {/*<li id="older"><a onClick={this.ShowByPageSub.bind(this)}>← 上一页</a></li>*/}
+                {/*<li id="newer"><a onClick={this.ShowByPageAdd.bind(this)}>下一页 →</a></li>*/}
+            {/*</ul>*/}
             <Footer/>
         </div>
     }

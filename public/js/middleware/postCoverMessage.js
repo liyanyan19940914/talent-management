@@ -8,7 +8,7 @@ export default store => next => action =>{
                 schoolName:action.data.schoolName,date1:action.data.date1,date2:action.data.date2,major:action.data.major,academic:action.data.academic,
                 projectName:action.data.projectName,standard:action.data.standard,rol:action.data.rol,describe:action.data.describe,summary:action.data.summary,duty:action.data.duty,
                 jobType:action.data.jobType,city:action.data.city,pay:action.data.pay,industry:action.data.industry,occupation:action.data.occupation,
-                hobby:action.data.hobby,evaluate:action.data.evaluate,resume:action.data.fileUpload})
+                hobby:action.data.hobby,evaluate:action.data.evaluate,resume:action.data.fileUpload,time:action.data.time})
                 .end((err,res)=>{
                     console.log('post cover',res.body.status);
                     next({type:'ADD-COVER-MESSAGE',status:res.body.status})

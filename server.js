@@ -52,6 +52,7 @@ const legalUsername = require('./server/routers/legalUsername');
 const logout = require('./server/routers/logout');
 const insertDiscuss = require('./server/routers/insertDiscuess');
 const findDiscuss = require('./server/routers/findDiscuss');
+// const searchLimit = require('./server/routers/searchLimit');
 
 app.use('/',addUser);
 app.use('/',findUser);
@@ -68,6 +69,7 @@ app.use('/',legalUsername);
 app.use('/',logout);
 app.use('/',insertDiscuss);
 app.use('/',findDiscuss);
+// app.use('/',searchLimit);
 
 app.get('*', (req, res) => {
     "use strict";

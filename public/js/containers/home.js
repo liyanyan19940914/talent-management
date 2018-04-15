@@ -13,7 +13,13 @@ const mapDispatchToProps = (dispatch) => {
         },
         searchInfo:(data)=>{
             dispatch({type:'SEARCH-INFO',data})
-        }
+        },
+        // onShowAdd: (index)=> {
+        //     dispatch({type:'SHOW-ADD',index});
+        // },
+        // onShowSub: (index)=> {
+        //     dispatch({type:'SHOW-SUB',index});
+        // },
     }
 }
 
