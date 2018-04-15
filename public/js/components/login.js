@@ -25,6 +25,9 @@ class Login extends Component {
         let password = this.refs.password.value;
         this.props.onLogin({username,password});
     }
+    forgetPsw(){
+        browserHistory.push('/forgetPsw')
+    }
     componentWillUpdate(nextProps){
         if(nextProps.login.isLogin === "用户不存在"){
             $("#usernameTip").text("用户不存在");
@@ -53,7 +56,7 @@ class Login extends Component {
                         onBlur={this.confirmPassword.bind(this)} onFocus={this.focusPassword.bind(this)}/>
                         <span className="input-tips" id="passwordTip"></span>
                     </div>
-                    <span className="forgot-pwd">忘记密码？</span>
+                    <span className="forgot-pwd" onClick={this.forgetPsw.bind(this)}>忘记密码？</span>
                     <div>
                         <button type="submit" className="buttonType" onClick={this.login.bind(this)}>登录</button>
                     </div>
