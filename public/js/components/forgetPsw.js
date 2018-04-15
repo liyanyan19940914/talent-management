@@ -48,7 +48,16 @@ class ForgetPsw extends Component {
             this.props.forgetPsw({username,password})
         }
     }
-
+    componentWillUpdate(nextProps){
+        console.log('component',nextProps.forgetPassword.isForgetPsw);
+        if(nextProps.forgetPassword.isForgetPsw === 0){
+            alert('用户名不存在');
+            this.props.resetForgetPsw({isForgetPsw:false});
+        }else if(nextProps.forgetPassword.isForgetPsw === 1){
+            browserHistory.push('/login');
+            this.props.resetForgetPsw({isForgetPsw:false});
+        }
+    }
     render() {
         return <div>
             <div className="backgroundImg"></div>

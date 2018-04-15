@@ -8,6 +8,7 @@ import personalCenter from './personalCenter';
 import editCoverMessage from './editCoverMessage';
 import nav from './nav';
 import readCoverMessage from './readCoverMessage';
+import forgetPassword from './forgetPsw';
 
 export default combineReducers({
     register,
@@ -18,5 +19,6 @@ export default combineReducers({
     home,
     personalCenter,
     editCoverMessage,
-    readCoverMessage
+    readCoverMessage,
+    forgetPassword
 });
