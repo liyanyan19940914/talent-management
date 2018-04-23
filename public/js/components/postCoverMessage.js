@@ -4,6 +4,16 @@ import Footer from '../containers/footer';
 import FileUpload from '../containers/fileUpload';
 
 class PostCoverMessage extends Component{
+    changeColor(e){
+        if(e.target.className != "post-navList"){
+            var child =e.target.parentNode.parentNode.parentNode.children;
+            console.log(child);
+            for(var i=0;i<child.length;i++){
+                child[i].child.style.backgroundColor="tranparent";
+            }
+            e.target.style.backgroundColor=e.target.style.backgroundColor ==="transparent"?"#e4b9c0":"transparent";
+        }
+    }
     verifyTel(){
         let tel = this.refs.tel.value;
         let regexp = /^1[0-9]{10}$/;
@@ -221,7 +231,7 @@ class PostCoverMessage extends Component{
                             <div className="content">
                                 <div className="hd">学生档案</div>
                                 <div className="actionBarList">
-                                    <ul className="post-navList">
+                                    <ul className="post-navList" onClick={this.changeColor.bind(this)}>
                                         <li>
                                             <a href="#information">
                                                 <i className="glyphicon glyphicon-triangle-right"></i>
