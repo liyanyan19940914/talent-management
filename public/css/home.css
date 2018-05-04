@@ -202,6 +202,7 @@
 .head-line-more{
     padding-right: 0;
     width: auto;
+    cursor: pointer;
 }
 
 .head-line-more span{
