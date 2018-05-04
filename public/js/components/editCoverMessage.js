@@ -281,8 +281,17 @@ class EditCoverMessage extends Component{
                                     </div>
                                     <div className="form-group">
                                         <label for="inputEmail3" className="col-sm-2 control-label">所属行业</label>
-                                        <div className="col-sm-8">
-                                            <input type="email" className="form-control" id="industry" ref="industry"  />
+                                        <div className="col-sm-4">
+                                            <select className="form-control" ref="industry">
+                                                <option>产品/技术</option>
+                                                <option>金融</option>
+                                                <option>生产/制造</option>
+                                                <option>地产/建筑</option>
+                                                <option>销售/市场</option>
+                                                <option>职能类</option>
+                                                <option>医学</option>
+                                                <option>其他</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div className="form-group">

@@ -4,16 +4,16 @@ import Footer from '../containers/footer';
 import FileUpload from '../containers/fileUpload';
 
 class PostCoverMessage extends Component{
-    changeColor(e){
-        if(e.target.className != "post-navList"){
-            var child =e.target.parentNode.parentNode.parentNode.children;
-            console.log(child);
-            for(var i=0;i<child.length;i++){
-                child[i].child.style.backgroundColor="tranparent";
-            }
-            e.target.style.backgroundColor=e.target.style.backgroundColor ==="transparent"?"#e4b9c0":"transparent";
-        }
-    }
+    // changeColor(e){
+    //     if(e.target.className != "post-navList"){
+    //         var child =e.target.parentNode.parentNode.parentNode.children;
+    //         console.log(child);
+    //         for(var i=0;i<child.length;i++){
+    //             child[i].child.style.backgroundColor="tranparent";
+    //         }
+    //         e.target.style.backgroundColor=e.target.style.backgroundColor ==="transparent"?"#e4b9c0":"transparent";
+    //     }
+    // }
     verifyTel(){
         let tel = this.refs.tel.value;
         let regexp = /^1[0-9]{10}$/;
@@ -231,7 +231,7 @@ class PostCoverMessage extends Component{
                             <div className="content">
                                 <div className="hd">学生档案</div>
                                 <div className="actionBarList">
-                                    <ul className="post-navList" onClick={this.changeColor.bind(this)}>
+                                    <ul className="post-navList">
                                         <li>
                                             <a href="#information">
                                                 <i className="glyphicon glyphicon-triangle-right"></i>
@@ -449,14 +449,24 @@ class PostCoverMessage extends Component{
                                     </div>
                                     <div className="form-group">
                                         <label for="inputEmail3" className="col-sm-2 control-label">所属行业</label>
-                                        <div className="col-sm-8">
-                                            <input type="email" className="form-control" id="industry" ref="industry" placeholder=""/>
+                                        <div className="col-sm-4">
+                                            <select className="form-control" ref="industry">
+                                                <option>产品/技术</option>
+                                                <option>金融</option>
+                                                <option>生产/制造</option>
+                                                <option>地产/建筑</option>
+                                                <option>销售/市场</option>
+                                                <option>职能类</option>
+                                                <option>医学</option>
+                                                <option>其他</option>
+                                            </select>
                                         </div>
+
                                     </div>
                                     <div className="form-group">
                                         <label for="inputEmail3" className="col-sm-2 control-label">职业类别</label>
                                         <div className="col-sm-8">
-                                            <input type="" className="form-control" id="occupation" ref="occupation" placeholder=""/>
+                                            <input type="email" className="form-control" id="industry" ref="occupation" placeholder=""/>
                                         </div>
                                     </div>
                                     <div className="form-group" id="expectWork-submit">

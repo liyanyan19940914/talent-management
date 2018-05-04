@@ -143,3 +143,67 @@
     font-size: 14px;
     color:#555;
 }
+
+.head-line {
+    margin:30px 60px 10px 40px;
+    border-radius: 10px 10px 0 0;
+}
+.produce{
+    background-color: #31b0d5;
+
+}
+.build{
+    background-color: #c0a16b;
+}
+
+.financial{
+    background-color: #d58512;
+}
+
+.sale{
+    background-color: #a94442;
+}
+
+.make{
+    background-color: #5cb85c;
+}
+.head-line{
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: normal;
+    height:50px;
+    line-height: 50px;
+    padding: 0 20px;
+}
+
+.title-text{
+    margin-left:6px;
+}
+
+.more-fr{
+    float: right;
+}
+
+.head-line-ad{
+    font-size: 0;
+    height: 50px;
+}
+
+.head-line-ad a{
+    color:#ffffff;
+    font-size: 16px;
+    padding: 0 18px;
+    text-align: center;
+    height: 50px;
+    box-sizing: border-box;
+    max-width: 132px;
+}
+
+.head-line-more{
+    padding-right: 0;
+    width: auto;
+}
+
+.head-line-more span{
+    margin-right: 5px;
+}
