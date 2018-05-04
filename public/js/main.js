@@ -15,6 +15,7 @@ import PersonalCenter from './containers/personalCenter';
 import EditCoverMessage from './containers/editCoverMessage';
 import Upload from './containers/fileUpload';
 import ForgetPsw from './containers/forgetPsw';
+import MoreMessage from './containers/moreMessage';
 
 import registerMiddleware from './middleware/register';
 import loginMiddleware from './middleware/login';
@@ -25,10 +26,11 @@ import editCoverMessageMiddleware from './middleware/editCoverMessage';
 import navMiddleware from './middleware/nav';
 import readCoverMessageMiddleware from './middleware/readCoverMessage';
 import forgetPswMiddleware from './middleware/forgetPsw';
+import moreMessageMiddleware from './middleware/moreMessage'
 
 const createStoreWithMiddleware = applyMiddleware(registerMiddleware,loginMiddleware,postCoverMessageMiddleware,
     homeMiddleware,personalCenterMiddleware,editCoverMessageMiddleware,navMiddleware,readCoverMessageMiddleware,
-    forgetPswMiddleware)(createStore);
+    forgetPswMiddleware,moreMessageMiddleware)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 
@@ -45,6 +47,7 @@ render(
             <Route path="/editMessage" component={EditCoverMessage}/>
             <Route path="upload" component={Upload}/>
             <Route path="/forgetPsw" component={ForgetPsw}/>
+            <Route path="/moreMessage" component={MoreMessage}/>
         </Router>
     </Provider>, document.getElementById('app')
 );

@@ -11,11 +11,7 @@ class Home extends Component{
     }
     search(){
         let info = this.refs.info.value;
-        if (info){
-            this.props.searchInfo({info});
-        }else{
-            this.props.getAllCoverMessage();
-        }
+
 
     }
     render(){
@@ -50,9 +46,7 @@ class Home extends Component{
                 <p className="head-line produce">
                     <span className="title-text">IT／互联网／通信／电子</span>
                     <span className="head-line-ad more-fr">
-                        <a href="" className="head-line-more">
-                            <span>更多</span>
-                        </a>
+                        <Link to="/moreMessage" className="head-line-more">更多</Link>
                     </span>
                 </p>
                 <ul className="list-ul">
@@ -95,10 +89,8 @@ class Home extends Component{
             <p className="head-line build">
                 <span className="title-text">房地产建筑</span>
                 <span className="head-line-ad more-fr">
-                        <a href="" className="head-line-more">
-                            <span>更多</span>
-                        </a>
-                    </span>
+                    <Link to="/moreMessage" className="head-line-more">更多</Link>
+                </span>
             </p>
             <ul className="list-ul">
                 {
@@ -140,9 +132,7 @@ class Home extends Component{
             <p className="head-line financial">
                 <span className="title-text">金融</span>
                 <span className="head-line-ad more-fr">
-                        <a href="" className="head-line-more">
-                            <span>更多</span>
-                        </a>
+                        <Link to="/moreMessage" className="head-line-more">更多</Link>
                     </span>
             </p>
             <ul className="list-ul">
@@ -185,9 +175,7 @@ class Home extends Component{
             <p className="head-line sale">
                 <span className="title-text">销售/市场</span>
                 <span className="head-line-ad more-fr">
-                        <a href="" className="head-line-more">
-                            <span>更多</span>
-                        </a>
+                        <Link to="/moreMessage" className="head-line-more">更多</Link>
                     </span>
             </p>
             <ul className="list-ul">
@@ -230,9 +218,7 @@ class Home extends Component{
             <p className="head-line make">
                 <span className="title-text">生产/制造</span>
                 <span className="head-line-ad more-fr">
-                        <a href="" className="head-line-more">
-                            <span>更多</span>
-                        </a>
+                        <Link to="/moreMessage" className="head-line-more">更多</Link>
                     </span>
             </p>
             <ul className="list-ul">

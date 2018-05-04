@@ -1,0 +1,87 @@
+.resultBox{
+    width:788px;
+    margin:20px auto;
+    border:1px solid #e6e6e6;
+    border-bottom: none;
+}
+.result-list{
+    list-style: none;
+}
+
+.result-list li{
+    border:1px solid #e6e6e6;
+    padding: 0px 18px;
+}
+
+.resultItem{
+    margin-left: 0px;
+    width: 752px;
+}
+
+.resultInfo{
+    display: inline-block;
+    width:300px;
+    padding-left: 30px;
+    margin:10px 45px 10px 0;
+}
+
+.resultInfo .fr{
+    float: right;
+}
+
+.resultSchool{
+    font-size: 14px;
+    font-family: "simsun";
+    color: #333333;
+    padding-top: 10px;
+}
+
+.resultMajor{
+    padding-top:16px;
+    font:12px "宋体";
+    color: #888888;
+}
+
+.resultJob{
+    width:376px;
+    margin: 10px 0;
+    border-right:1px dashed #eaeaea;
+}
+
+.resultJob .fr{
+    float: right;
+}
+
+.jobName{
+    height: 18px;
+    font:14px/18px "simsun";
+    color: #336699;
+    font-weight: bold;
+}
+
+.jobCity{
+    height:16px;
+    padding-top: 16px;
+}
+
+.cityName{
+    display:inline-block;
+    font:12px/16px "宋体";
+    color:#888888;
+    margin-right: 30px;
+    line-height: 16px;
+    vertical-align: middle;
+}
+
+.cityVal{
+    display:inline-block;
+    max-width:8em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+}
+
+.cityVal em{
+    color:#333333;
+}
