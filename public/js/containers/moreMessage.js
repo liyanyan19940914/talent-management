@@ -11,7 +11,7 @@ const mapDispatchToProps = (dispatch) => {
             dispatch({type:'GET-ALL-MESSAGE'})
         },
         searchInfo:(data)=>{
-            dispatch({type:'SEARCH-INFO',data})
+            dispatch({type:'SEARCH-FULLTIME-INFO',data})
         }
     }
 }

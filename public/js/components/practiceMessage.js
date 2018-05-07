@@ -3,7 +3,7 @@ import Nav from '../containers/nav';
 import Footer from '../containers/footer';
 import {Link, browserHistory} from 'react-router';
 
-class MoreMessage extends Component{
+class PracticeMessage extends Component{
     componentWillMount(){
         this.props.getAllMessage();
     }
@@ -17,9 +17,9 @@ class MoreMessage extends Component{
 
     }
     render(){
-        let coverMessages = this.props.moreMessage.message;
+        let coverMessages = this.props.practiceMessage.message;
         let fullTime = Array.isArray(coverMessages)===false ? "" : coverMessages.filter((ele,index)=>{
-            return ele.jobType === "全职";
+            return ele.jobType === "实习";
         });
         console.log("more message",coverMessages);
         return <div>
@@ -84,4 +84,4 @@ class MoreMessage extends Component{
     }
 }
 
-export default MoreMessage;
+export default PracticeMessage;

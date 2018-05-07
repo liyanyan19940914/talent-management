@@ -33,6 +33,9 @@ class Nav extends Component{
     moreMessage(){
         browserHistory.push('/moreMessage');
     }
+    practiceMessages(){
+        browserHistory.push('/practiceMessage');
+    }
     personalCenter(){
         let cookies = {};
         document.cookie.split(';').forEach((Cookie)=> {
@@ -75,6 +78,7 @@ class Nav extends Component{
                     <ul className="list">
                         <li><span className="colorA" onClick={this.home.bind(this)}>首页</span></li>
                         <li><span className="colorA" onClick={this.moreMessage.bind(this)}>找全职</span></li>
+                        <li><span className="colorA" onClick={this.practiceMessages.bind(this)}>找实习</span></li>
                         <li><span className="colorA" onClick={this.postMessage.bind(this)}>发布信息</span></li>
                         <li><span className="colorA" onClick={this.personalCenter.bind(this)}>个人中心</span></li>
                     </ul>

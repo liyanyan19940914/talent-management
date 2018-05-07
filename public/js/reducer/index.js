@@ -10,6 +10,7 @@ import nav from './nav';
 import readCoverMessage from './readCoverMessage';
 import forgetPassword from './forgetPsw';
 import moreMessage from './moreMessage';
+import practiceMessage from './practiceMessage';
 
 export default combineReducers({
     register,
@@ -22,5 +23,6 @@ export default combineReducers({
     editCoverMessage,
     readCoverMessage,
     forgetPassword,
-    moreMessage
+    moreMessage,
+    practiceMessage
 });
