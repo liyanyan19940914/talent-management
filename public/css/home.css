@@ -208,3 +208,7 @@
 .head-line-more span{
     margin-right: 5px;
 }
+
+.searchItem{
+    display: none;
+}

@@ -5,13 +5,19 @@ import Footer from '../containers/footer';
 
 class Home extends Component{
     componentWillMount(){
-        // const index = -2;
-        // this.props.onShowAdd(index);
         this.props.getAllCoverMessage();
     }
     search(){
         let info = this.refs.info.value;
-
+        if (info){
+            this.refs.allListItem.style.display = "none";
+            this.refs.searchItem.style.display = "inline";
+            this.props.searchInfo({info});
+        }else{
+            this.props.getAllCoverMessage();
+            this.refs.allListItem.style.display = "inline";
+            this.refs.searchItem.style.display = "none";
+        }
 
     }
     render(){
@@ -43,6 +49,46 @@ class Home extends Component{
                         </div>
                     </div>
                 </div>
+                <div className="searchItem" ref="searchItem">
+                    <ul className="list-ul">
+                        {
+                            Array.isArray(produce) === false ? "" : produce.slice(0,6).map((ele,index) => {
+                                const path = "readCoverMessage?name="+ele.name+"&sex="+ele.sex+"&tel="+ele.tel+"&email="+ele.email+"&job="+ele.job
+                                    +"&schoolName="+ele.schoolName+"&date1="+ele.date1+"&date2="+ele.date2+"&major="+ele.major+"&academic="
+                                    +ele.academic+"&projectName="+ele.projectName+"&standard="+ele.standard+"&rol="+ele.rol+"&describes="+
+                                    ele.describes+"&summary="+ele.summary+"&duty="+ele.duty+"&jobType="+ele.jobType+"&city="+ele.city+
+                                    "&pay="+ele.pay+"&industry="+ele.industry+"&occupation="+ele.occupation+"&hobby="+ele.hobby+
+                                    "&evaluate="+ele.evaluate+"&fileUpload="+ele.fileUpload+"&message_id="+ele.message_id;
+
+                                return <div key={index}>
+                                    <li className="list-item">
+                                        <div className="pli-top">
+                                            <div className="clearfix">
+                                                <div className="position-name fl">
+                                                    <h2 className="dib clearfix">
+                                                        <Link to={path} className="wordCut fl">{ele.job}</Link>
+                                                    </h2>
+                                                </div>
+                                                <span className="salary fr">{ele.pay}</span>
+                                            </div>
+                                            <div className="position-main-info wordCut">
+                                                <span>{ele.jobType}</span>
+                                                <span>{ele.academic}</span>
+                                            </div>
+                                            <div className="labels">
+                                                <div className="pli-btml-l">
+                                                    <span className="wordCut">{ele.industry}</span>
+                                                    <span className="wordCut pli-locattion">{ele.occupation}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </div>
+                            })
+                        }
+                    </ul>
+                </div>
+            <div className="allListItem" ref="allListItem">
                 <p className="head-line produce">
                     <span className="title-text">IT／互联网／通信／电子</span>
                     <span className="head-line-ad more-fr">
@@ -258,6 +304,7 @@ class Home extends Component{
                     })
                 }
             </ul>
+            </div>
             <Footer/>
         </div>
     }
