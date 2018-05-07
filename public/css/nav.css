@@ -1,3 +1,11 @@
+.navBox{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top:0;
+    z-index: 300;
+    width: 100%;
+}
 .lg-tbar{
     height:30px;
     background: #333333;
@@ -43,7 +51,7 @@
     line-height: 54px;
     font-family: "Microsoft Yahei","微软雅黑",verdana;
     font-weight: 700;
-    margin:5%;
+    margin:3%;
     cursor: pointer;
 }
 

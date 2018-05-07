@@ -1,5 +1,6 @@
 .post-box{
     background: url(//assets.dajieimg.com/up/profile2013/images/bg.png) 0 0 repeat #dedede;
+    padding: 104px 0 20px 0;
 }
 .content{
     width:74%;
@@ -16,7 +17,7 @@
 }
 
 .post-rightInner{
-    padding:15px 20px 0 20px;
+    padding:35px 20px 0 20px;
     background: #ffffff;
     border:1px solid #ddd;
 }

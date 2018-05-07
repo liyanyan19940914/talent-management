@@ -57,7 +57,7 @@ class Nav extends Component{
     }
     render(){
         console.log(this.props.nav);
-        return <div>
+        return <div className="navBox">
             <div className="lg-tbar">
                 <div className="inner">
                     <div className="lg-tbar-l">
