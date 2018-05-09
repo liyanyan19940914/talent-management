@@ -3,6 +3,7 @@ import {Link, browserHistory} from 'react-router';
 
 class Login extends Component {
     confirmUsername(){
+        console.log(this.props.location.pathname);
         let username = this.refs.userName.value;
         if(username === ""){
             $("#usernameTip").text("用户名不能为空")
@@ -26,7 +27,7 @@ class Login extends Component {
         this.props.onLogin({username,password});
     }
     forgetPsw(){
-        browserHistory.push('/forgetPsw')
+        browserHistory.push('/forgetPsw');
     }
     componentWillUpdate(nextProps){
         if(nextProps.login.isLogin === "用户不存在"){
@@ -36,8 +37,13 @@ class Login extends Component {
             $("#passwordTip").text("密码错误，请重新输入");
             this.props.resetLogin({isLogin:false});
         }else if(nextProps.login.isLogin){
-            browserHistory.push('/home');
-            this.props.resetLogin({isLogin:false});
+            if(this.props.location.pathname === "/login"){
+                browserHistory.push('/home');
+                this.props.resetLogin({isLogin:false});
+            }else{
+                browserHistory.push('/register');
+                this.props.resetLogin({isLogin:false});
+            }
         }
     }
     render() {

@@ -28,7 +28,7 @@ class MoreMessage extends Component{
                 <div className="search-wrapper">
                     <div className="search-box">
                         <form className="searchForm clearfix">
-                            <input type="text" className="search-input" ref="info" placeholder="搜索职位，地点"/>
+                            <input type="text" className="search-input" ref="info" placeholder="请根据职位，地点，学历搜索"/>
                             <button type="button" className="search-button" onClick={this.search.bind(this)}>查询</button>
                         </form>
                     </div>
