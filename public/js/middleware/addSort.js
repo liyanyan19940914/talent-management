@@ -6,7 +6,8 @@ export default store => next => action => {
             request.post('/addSort')
                 .send(action.data)
                 .end((err,res) => {
-                    next({type:"ISEXIT-SORT",status:res.body.data})
+                    console.log("addsort",res.body.status);
+                    next({type:"ISEXIT-SORT",status:res.body.status})
                 });
             break;
     }
