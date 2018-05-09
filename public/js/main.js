@@ -18,6 +18,7 @@ import ForgetPsw from './containers/forgetPsw';
 import MoreMessage from './containers/moreMessage';
 import PracticeMessage from './containers/practiceMessage';
 import AddSort from './containers/addSort';
+import AdminHome from './containers/adminHome';
 
 import registerMiddleware from './middleware/register';
 import loginMiddleware from './middleware/login';
@@ -32,10 +33,12 @@ import moreMessageMiddleware from './middleware/moreMessage';
 import practiceMessageMiddleware from './middleware/practiceMessage';
 import adminNavMiddleware from './middleware/adminNav';
 import addSortMiddleware from './middleware/addSort';
+import adminHomeMiddleware from './middleware/adminHome';
 
 const createStoreWithMiddleware = applyMiddleware(registerMiddleware,loginMiddleware,postCoverMessageMiddleware,
     homeMiddleware,personalCenterMiddleware,editCoverMessageMiddleware,navMiddleware,readCoverMessageMiddleware,
-    forgetPswMiddleware,moreMessageMiddleware,practiceMessageMiddleware,adminNavMiddleware,addSortMiddleware)(createStore);
+    forgetPswMiddleware,moreMessageMiddleware,practiceMessageMiddleware,adminNavMiddleware,addSortMiddleware,
+    adminHomeMiddleware)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 
@@ -56,6 +59,7 @@ render(
             <Route path="/moreMessage" component={MoreMessage}/>
             <Route path="/practiceMessage" component={PracticeMessage}/>
             <Route path="/addSort" component={AddSort}/>
+            <Route path="adminHome" component={AdminHome}/>
         </Router>
     </Provider>, document.getElementById('app')
 );

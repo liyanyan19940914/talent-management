@@ -15,6 +15,14 @@ class AdminNav extends Component{
         this.props.logoutUser();
         browserHistory.push('/adminLogin');
     }
+
+    addSort(){
+        browserHistory.push('/addSort');
+    }
+    adminHome(){
+        browserHistory.push('/adminHome');
+    }
+
     render(){
         console.log(this.props.adminNav);
         return <div className="navBox">
@@ -32,19 +40,11 @@ class AdminNav extends Component{
             <div className="lgbar">
                 <div className=" navbar-inverse lbar">
                     <ul className="lbar-list">
-                        <li><span className="colorA">添加分类</span></li>
-                        <li><span className="colorA">首页</span></li>
+                        <li><span className="colorA" onClick={this.adminHome.bind(this)}>首页</span></li>
+                        <li><span className="colorA" onClick={this.addSort.bind(this)}>添加分类</span></li>
                     </ul>
                 </div>
             </div>
-            {/*// <div>*/}
-            {/*//     <div className="navbar-inverse lbar">*/}
-            {/*//         <ul className="lbar-list">*/}
-            {/*//             <li><span className="colorA">添加分类</span></li>*/}
-            {/*//             <li><span className="colorA">首页</span></li>*/}
-                    {/*/!*</ul>*!/*/}
-                {/*/!*</div>*!/*/}
-            {/*/!*</div>*!/*/}
         </div>
     }
 }

@@ -41,7 +41,7 @@ class Login extends Component {
                 browserHistory.push('/home');
                 this.props.resetLogin({isLogin:false});
             }else{
-                browserHistory.push('/register');
+                browserHistory.push('/adminHome');
                 this.props.resetLogin({isLogin:false});
             }
         }

@@ -54,6 +54,7 @@ const insertDiscuss = require('./server/routers/insertDiscuess');
 const findDiscuss = require('./server/routers/findDiscuss');
 const forgetPsw = require('./server/routers/forgetPsw');
 const addSort = require('./server/routers/addSort');
+const allSort = require('./server/routers/findAllSort');
 // const searchLimit = require('./server/routers/searchLimit');
 
 app.use('/',addUser);
@@ -73,6 +74,7 @@ app.use('/',insertDiscuss);
 app.use('/',findDiscuss);
 app.use('/',forgetPsw);
 app.use('/',addSort);
+app.use('/',allSort);
 // app.use('/',searchLimit);
 
 app.get('*', (req, res) => {

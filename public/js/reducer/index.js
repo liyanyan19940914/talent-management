@@ -13,6 +13,7 @@ import moreMessage from './moreMessage';
 import practiceMessage from './practiceMessage';
 import adminNav from './adminNav';
 import addSort from './addSort';
+import adminHome from './adminHome'
 
 export default combineReducers({
     register,
@@ -28,5 +29,6 @@ export default combineReducers({
     moreMessage,
     practiceMessage,
     adminNav,
-    addSort
+    addSort,
+    adminHome
 });
