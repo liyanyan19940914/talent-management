@@ -17,7 +17,7 @@ import Upload from './containers/fileUpload';
 import ForgetPsw from './containers/forgetPsw';
 import MoreMessage from './containers/moreMessage';
 import PracticeMessage from './containers/practiceMessage';
-import AdminNav from './containers/adminNav';
+import AddSort from './containers/addSort';
 
 import registerMiddleware from './middleware/register';
 import loginMiddleware from './middleware/login';
@@ -54,7 +54,7 @@ render(
             <Route path="/forgetPsw" component={ForgetPsw}/>
             <Route path="/moreMessage" component={MoreMessage}/>
             <Route path="/practiceMessage" component={PracticeMessage}/>
-            <Route path="/adminNav" component={AdminNav}/>
+            <Route path="/addSort" component={AddSort}/>
         </Router>
     </Provider>, document.getElementById('app')
 );

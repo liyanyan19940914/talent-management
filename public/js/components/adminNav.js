@@ -29,14 +29,22 @@ class AdminNav extends Component{
                     </div>
                 </div>
             </div>
-            <div>
-                <nav className="navbar-inverse lbar">
+            <div className="lgbar">
+                <div className=" navbar-inverse lbar">
                     <ul className="lbar-list">
                         <li><span className="colorA">添加分类</span></li>
                         <li><span className="colorA">首页</span></li>
                     </ul>
-                </nav>
+                </div>
             </div>
+            {/*// <div>*/}
+            {/*//     <div className="navbar-inverse lbar">*/}
+            {/*//         <ul className="lbar-list">*/}
+            {/*//             <li><span className="colorA">添加分类</span></li>*/}
+            {/*//             <li><span className="colorA">首页</span></li>*/}
+                    {/*/!*</ul>*!/*/}
+                {/*/!*</div>*!/*/}
+            {/*/!*</div>*!/*/}
         </div>
     }
 }
