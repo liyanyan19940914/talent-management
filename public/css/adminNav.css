@@ -1,0 +1,32 @@
+.ltbar{
+    height: 50px;
+    line-height: 50px;
+    background: #333333;
+}
+
+.lbar{
+    width:12%;
+    min-height: 800px;
+    max-height:900px;
+    margin-bottom: 0px;
+}
+
+.lbar-list{
+    text-align:center;
+    height: 100%;
+}
+
+.lbar-list li{
+    color:#eaeeed;
+    list-style: none;
+    font-size: 14px;
+    height:54px;
+    line-height: 54px;
+    font-family: "Microsoft Yahei","微软雅黑",verdana;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.lbar-list a:hover{
+    color:#00b38a;
+}

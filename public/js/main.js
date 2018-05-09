@@ -17,6 +17,7 @@ import Upload from './containers/fileUpload';
 import ForgetPsw from './containers/forgetPsw';
 import MoreMessage from './containers/moreMessage';
 import PracticeMessage from './containers/practiceMessage';
+import AdminNav from './containers/adminNav';
 
 import registerMiddleware from './middleware/register';
 import loginMiddleware from './middleware/login';
@@ -29,10 +30,11 @@ import readCoverMessageMiddleware from './middleware/readCoverMessage';
 import forgetPswMiddleware from './middleware/forgetPsw';
 import moreMessageMiddleware from './middleware/moreMessage';
 import practiceMessageMiddleware from './middleware/practiceMessage';
+import adminNavMiddleware from './middleware/adminNav';
 
 const createStoreWithMiddleware = applyMiddleware(registerMiddleware,loginMiddleware,postCoverMessageMiddleware,
     homeMiddleware,personalCenterMiddleware,editCoverMessageMiddleware,navMiddleware,readCoverMessageMiddleware,
-    forgetPswMiddleware,moreMessageMiddleware,practiceMessageMiddleware)(createStore);
+    forgetPswMiddleware,moreMessageMiddleware,practiceMessageMiddleware,adminNavMiddleware)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 
@@ -52,6 +54,7 @@ render(
             <Route path="/forgetPsw" component={ForgetPsw}/>
             <Route path="/moreMessage" component={MoreMessage}/>
             <Route path="/practiceMessage" component={PracticeMessage}/>
+            <Route path="/adminNav" component={AdminNav}/>
         </Router>
     </Provider>, document.getElementById('app')
 );
