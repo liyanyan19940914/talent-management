@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link, browserHistory} from 'react-router';
 import AdminNav from '../containers/adminNav';
 
 class AddSort extends Component{
@@ -7,7 +8,16 @@ class AddSort extends Component{
         console.log("hjkko",sortName);
         this.props.addClass({sortName});
     }
-
+    componentWillUpdate(nextProps){
+        if(nextProps.addSort.isExitSort === "类名已存在，请重新输入！"){
+            $("#sortTip").text("类名已存在，请重新输入！");
+            this.props.resetSort({isExitSort:false});
+        }
+        else if(nextProps.addSort.isExitSort){
+            browserHistory.push('/adminLogin');
+            this.props.resetSort({isExitSort:false});
+        }
+    }
     render(){
         return <div>
             <AdminNav/>
@@ -16,6 +26,7 @@ class AddSort extends Component{
                         <label  className="col-sm-2 control-label">类名</label>
                         <div className="col-sm-6">
                             <input type="text" className="form-control"  ref="sortName" placeholder=""/>
+                            <span className="input-tips" id="sortTip"></span>
                         </div>
                     </div>
                     <div className="form-group">

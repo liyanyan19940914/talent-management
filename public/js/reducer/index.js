@@ -12,6 +12,7 @@ import forgetPassword from './forgetPsw';
 import moreMessage from './moreMessage';
 import practiceMessage from './practiceMessage';
 import adminNav from './adminNav';
+import addSort from './addSort';
 
 export default combineReducers({
     register,
@@ -26,5 +27,6 @@ export default combineReducers({
     forgetPassword,
     moreMessage,
     practiceMessage,
-    adminNav
+    adminNav,
+    addSort
 });
