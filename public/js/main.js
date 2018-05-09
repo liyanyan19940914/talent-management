@@ -31,10 +31,11 @@ import forgetPswMiddleware from './middleware/forgetPsw';
 import moreMessageMiddleware from './middleware/moreMessage';
 import practiceMessageMiddleware from './middleware/practiceMessage';
 import adminNavMiddleware from './middleware/adminNav';
+import addSortMiddleware from './middleware/addSort';
 
 const createStoreWithMiddleware = applyMiddleware(registerMiddleware,loginMiddleware,postCoverMessageMiddleware,
     homeMiddleware,personalCenterMiddleware,editCoverMessageMiddleware,navMiddleware,readCoverMessageMiddleware,
-    forgetPswMiddleware,moreMessageMiddleware,practiceMessageMiddleware,adminNavMiddleware)(createStore);
+    forgetPswMiddleware,moreMessageMiddleware,practiceMessageMiddleware,adminNavMiddleware,addSortMiddleware)(createStore);
 
 const store = createStoreWithMiddleware(reducer);
 

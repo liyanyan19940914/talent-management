@@ -67,3 +67,9 @@ create table discuessList(
     discuess varchar(400)
 )default charset=utf8;
 
+创建管理员管理分类表：
+
+create table sort(
+    id int UNSIGNED AUTO_INCREMENT primary key,
+    sortName varchar(100) not null
+)default charset=utf8;
