@@ -6,13 +6,31 @@ class AdminHome extends Component{
     componentWillMount(){
         this.props.getAllSort();
     }
+    search(){
+        let sortName = this.refs.info.value;
+        if(sortName){
+            this.props.searchSort({sortName})
+        }else{
+            this.props.getAllSort();
+        }
+    }
     render(){
         let allSort = this.props.adminHome.AllSort;
         console.log(allSort);
         return <div>
             <AdminNav/>
-            <div className="addSort">
                 <div className="col-md-8 col-md-offset-2">
+                    <div className="addSort">
+                        <div className="contain-header">
+                            <div>
+                                <div className="adminSearch-box">
+                                    <form className="searchForm clearfix">
+                                        <input type="text" className="search-input" ref="info" placeholder="请根据类名进行搜索"/>
+                                        <button type="button" className="search-button" onClick={this.search.bind(this)}>查询</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                 <table className="table table-bordered location">
                     <thead>
                     <tr className="active font">

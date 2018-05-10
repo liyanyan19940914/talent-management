@@ -61,3 +61,12 @@
 .modify:hover{
     color:#00b38a;
 }
+
+.adminSearch-box{
+    border:0 solid #00b3a8;
+    width:100%;
+    height:46px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}

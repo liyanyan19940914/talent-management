@@ -14,7 +14,7 @@ class AddSort extends Component{
             this.props.resetSort({isExitSort:false});
         }
         else if(nextProps.addSort.isExitSort){
-            browserHistory.push('/adminLogin');
+            browserHistory.push('/adminHome');
             this.props.resetSort({isExitSort:false});
         }
     }
