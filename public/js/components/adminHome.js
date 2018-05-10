@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link, browserHistory} from 'react-router';
 import AdminNav from '../containers/adminNav';
 
 class AdminHome extends Component{
@@ -28,8 +29,8 @@ class AdminHome extends Component{
                                 <td>{ele.id}</td>
                                 <td>{ele.sortName}</td>
                                 <td>
-                                    <span>编辑</span>
-                                    <span className="operateion">删除</span>
+                                    <Link to={path} className="modify">编辑</Link>
+                                    {/*<span className="operateion">删除</span>*/}
                                 </td>
                             </tr>
                         })

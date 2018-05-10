@@ -53,3 +53,11 @@
 .operateion{
     margin-left: 15px;
 }
+
+.modify{
+    color:#000000;
+}
+
+.modify:hover{
+    color:#00b38a;
+}
