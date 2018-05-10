@@ -13,6 +13,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         resetMessage:(data) => {
             dispatch({type:'RESET-MESSAGE',data})
+        },
+        getAllSort:() => {
+            dispatch({type:"GET-ALL-SORT"});
         }
     }
 };

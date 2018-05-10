@@ -4,16 +4,9 @@ import Footer from '../containers/footer';
 import FileUpload from '../containers/fileUpload';
 
 class PostCoverMessage extends Component{
-    // changeColor(e){
-    //     if(e.target.className != "post-navList"){
-    //         var child =e.target.parentNode.parentNode.parentNode.children;
-    //         console.log(child);
-    //         for(var i=0;i<child.length;i++){
-    //             child[i].child.style.backgroundColor="tranparent";
-    //         }
-    //         e.target.style.backgroundColor=e.target.style.backgroundColor ==="transparent"?"#e4b9c0":"transparent";
-    //     }
-    // }
+    componentWillMount(){
+        this.props.getAllSort();
+    }
     verifyTel(){
         let tel = this.refs.tel.value;
         let regexp = /^1[0-9]{10}$/;
@@ -222,6 +215,8 @@ class PostCoverMessage extends Component{
         }
     }
     render(){
+        let allSort = this.props.postCoverMessage.allSort;
+        console.log(allSort);
         return <div>
             <Nav/>
             <div className="post-box">
@@ -451,14 +446,11 @@ class PostCoverMessage extends Component{
                                         <label for="inputEmail3" className="col-sm-2 control-label">所属行业</label>
                                         <div className="col-sm-4">
                                             <select className="form-control" ref="industry">
-                                                <option>产品/技术</option>
-                                                <option>金融</option>
-                                                <option>生产/制造</option>
-                                                <option>地产/建筑</option>
-                                                <option>销售/市场</option>
-                                                <option>职能类</option>
-                                                <option>医学</option>
-                                                <option>其他</option>
+                                                {
+                                                    Array.isArray(allSort) === false ? "" : allSort.map((ele,index) => {
+                                                           return <option>{ele.sortName}</option>
+                                                    })
+                                                }
                                             </select>
                                         </div>
 

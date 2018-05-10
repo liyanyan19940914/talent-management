@@ -14,6 +14,12 @@ export default store => next => action =>{
                     next({type:'ADD-COVER-MESSAGE',status:res.body.status})
                 });
             break;
+        case "GET-ALL-SORT":
+            request.get('/getAllSort')
+                .end((err,res) => {
+                    next({type:"ALL-SORT",status:res.body.sort})
+                });
+            break;
     }
     next(action);
 }
